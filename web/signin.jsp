@@ -4,6 +4,7 @@
     Author     : ASUS
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +28,9 @@
             color: black !important;
         }
     </style>
+    <script>
+        alert(message);
+    </script>
 </head>
 
 <body>
@@ -80,6 +84,11 @@
                                             <button type="submit" class="btn btn-primary btn-block mb-4">
                                                 Sign in
                                             </button>
+                                            <c:if test="${not empty message}">
+                                                <div>
+                                                    ${message}
+                                                </div>
+                                            </c:if>
                                         </form>
                                     </div>
                                 </div>

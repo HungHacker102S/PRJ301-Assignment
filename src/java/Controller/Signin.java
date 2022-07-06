@@ -36,10 +36,9 @@ public class Signin extends HttpServlet {
         String password = request.getParameter("password");
         UserDAO u = new UserDAO();
         if(!u.checkLogin(email, password)) {
-            request.setAttribute("email", email);
-            request.setAttribute("password", password);
+            request.setAttribute("message", "Wrong email or password");
+            request.getRequestDispatcher("signin.jsp").forward(request, response);
         }
-            request.getRequestDispatcher("home.jsp").forward(request, response);
 
     }
 
