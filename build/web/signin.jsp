@@ -63,16 +63,16 @@
             ">
                                     <div class="card-body p-5 shadow-5 text-center">
                                         <h2 class="fw-bold mb-5">Sign in</h2>
-                                        <form>
+                                        <form action="Signin">
                                             <!-- Email input -->
                                             <div class="form-outline mb-4">
-                                                <input type="email" id="form3Example3" class="form-control" />
+                                                <input type="text" name="email" value="${email}" id="form3Example3" class="form-control" />
                                                 <label class="form-label" for="form3Example3">Email address</label>
                                             </div>
 
                                             <!-- Password input -->
                                             <div class="form-outline mb-4">
-                                                <input type="password" id="form3Example4" class="form-control" />
+                                                <input type="text" name="password" value="${password}" id="form3Example4" class="form-control" />
                                                 <label class="form-label" for="form3Example4">Password</label>
                                             </div>
 

@@ -31,21 +31,17 @@ public class Signin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-            
-            UserDAO u = new UserDAO();
-            
-            if(u.checkLogin(email, password)) {
-                HttpSession session = request.getSession();
-                session.setAttribute("email", email);
-                request.setAttribute("email", email);
-                request.setAttribute("password", password);
-                request.getRequestDispatcher("home.jsp").forward(request, response);
-            }
+        
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        UserDAO u = new UserDAO();
+        if(!u.checkLogin(email, password)) {
+            request.setAttribute("email", email);
+            request.setAttribute("password", password);
+        }
+            request.getRequestDispatcher("home.jsp").forward(request, response);
 
-    } }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** 
