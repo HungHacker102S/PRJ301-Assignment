@@ -36,7 +36,7 @@ public class UserDAO {
     public boolean checkLogin(String email, String pass) {
         try {
             stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            String strSelect = "select * from tblUser where email='" + email + "' and pass='" + pass + "'";
+            String strSelect = "select * from Account where email='" + email + "' and pass='" + pass + "'";
             rs = stm.executeQuery(strSelect);
             while (rs.next()) {
                 System.out.println("Login successful");
@@ -51,7 +51,7 @@ public class UserDAO {
     public User userLogin(String email, String pass) {
         try {
             stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            String strSelect = "select * from tblUser where email='" + email + "' and pass='" + pass + "'";
+            String strSelect = "select * from Account where email='" + email + "' and pass='" + pass + "'";
             rs = stm.executeQuery(strSelect);
             while (rs.next()) {
                 User u =new User(email, pass);
