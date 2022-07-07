@@ -1,6 +1,6 @@
 <%-- 
-    Document   : SignIn
-    Created on : Jul 5, 2022, 5:13:31 PM
+    Document   : ForgotPassword
+    Created on : Jul 5, 2022, 5:13:02 PM
     Author     : ASUS
 --%>
 
@@ -9,7 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Sign In</title>
+        <title>Forgot Password</title>
+    
     
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -24,10 +25,8 @@
         .navbar-light .nav-link {
             color: black !important;
         }
-    </style>
+    </style>    
     </head>
-    
-    
     <body>
     <!--Main Navigation-->
     <header>
@@ -101,18 +100,18 @@
             backdrop-filter: blur(30px);
             ">
                                     <div class="card-body p-5 shadow-5 text-center">
-                                        <h2 class="fw-bold mb-5">Sign in</h2>
+                                        <h2 class="fw-bold mb-5">Forgot Password</h2>
                                         <form>
                                             <!-- Email input -->
                                             <div class="form-outline mb-4">
                                                 <input type="email" id="form3Example3" class="form-control" />
-                                                <label class="form-label" for="form3Example3">Email address</label>
+                                                <label class="form-label" for="form3Example3">Enter Your Email Address</label>
                                             </div>
 
-                                            <!-- Password input -->
+                                            <!-- Phone Number input -->
                                             <div class="form-outline mb-4">
                                                 <input type="password" id="form3Example4" class="form-control" />
-                                                <label class="form-label" for="form3Example4">Password</label>
+                                                <label class="form-label" for="form3Example4">Enter Your Phone Number</label>
                                             </div>
 
                                             <!-- Submit button -->
@@ -120,19 +119,19 @@
                                                 Sign in
                                             </button>
 
-                                            <!-- Forgot button -->
-                                            <a href="forgotpassword.jsp">
-                                                Forgot Password ?
-                                            </a>
-
-
+                                            <!-- Password input -->
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="form3Example4" class="form-control" value="Your Password will display here"  readonly/>
+                                            </div>
+                                            
+                                            
                                         </form>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-lg-6 mb-5 mb-lg-0">
-                                <img src="https://susudev.com/wp-content/uploads/2021/08/fast-food-english-luyennghetienganh-susudev-cambly.jpg"
+                                <img src="https://grf.vn/wp-content/uploads/2021/04/bo-tui-nhung-mon-junk-food-khong-an-la-tiec-o-toronto-unhealthiest-foods-planet.jpg"
                                     class="w-100 rounded-4 shadow-4" alt="" />
                             </div>
                         </div>
@@ -177,8 +176,8 @@
         </footer>
         <!--Footer-->
 </body>
-
+    
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
-    
+
 </html>

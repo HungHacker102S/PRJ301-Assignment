@@ -1,18 +1,16 @@
 <%-- 
-    Document   : index
-    Created on : Jun 16, 2022, 10:57:10 PM
+    Document   : Home
+    Created on : Jul 5, 2022, 5:12:10 PM
     Author     : ASUS
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Store</title>
-
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>KOF</title>
+    </head>
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
@@ -21,13 +19,60 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="css/style.css">
+    
 </head>
 
-<body>
+
+
+    <body>
     <!--Main Navigation-->
+    
     <header>
         <!-- Navbar -->
-        <%@include file="navbar.jsp" %>
+        <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+            <div class="container-fluid">
+
+                <!-- Navbar brand -->
+                <a class="navbar-brand nav-link" href=".">
+                    <strong>KOF</strong>                   
+                </a>
+
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarExample01">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" aria-current="page" href=".">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#category"
+                                rel="nofollow">Category</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about-us" >About Us</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav d-flex flex-row">
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link" href="signin.jsp"
+                                rel="nofollow">
+                                <span>Login</span>
+                            </a>
+                        </li>
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link" href="signup.jsp" rel="nofollow">
+                                <span>Register</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <!-- Navbar -->
 
         <!-- Carousel wrapper -->
@@ -46,8 +91,8 @@
                     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
                         <div class="d-flex justify-content-center align-items-center h-100">
                             <div class="text-white text-center">
-                                <h1 class="mb-3">Supersale</h1>
-                                <h5 class="mb-4">-50% sales hehehe</h5>
+                                <h1 class="mb-3">! SALE TO DIE !</h1>
+                                <h5 class="mb-4">-38% sales hehehe</h5>
                                 <a class="btn btn-outline-light btn-lg m-2"
                                     href="#readmore" role="button" rel="nofollow"
                                     target="_blank">READMORE</a>
@@ -61,7 +106,12 @@
                     <div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
                         <div class="d-flex justify-content-center align-items-center h-100">
                             <div class="text-white text-center">
-                                <h2>You can place here any content</h2>
+                                <h2>! BIG SALE FOR DRINK !</h2>
+                                <h2>-50% sale of for Avorcado</h2>
+                                <h2>Amazing</h2>
+                                <a class="btn btn-outline-light btn-lg m-2"
+                                    href="#readmore" role="button" rel="nofollow"
+                                    target="_blank">READMORE</a>
                             </div>
                         </div>
                     </div>
@@ -78,10 +128,10 @@
                     ">
                         <div class="d-flex justify-content-center align-items-center h-100">
                             <div class="text-white text-center">
-                                <h2>And cover it with any mask</h2>
+                                <h2>!! JUST SIGNUP AND YOU WILL HAVE VOUCHER !!</h2>
                                 <a class="btn btn-outline-light btn-lg m-2"
                                     href="https://mdbootstrap.com/docs/standard/content-styles/masks/" target="_blank"
-                                    role="button">Learn about masks</a>
+                                    role="button">SIGN IN</a>
                             </div>
                         </div>
                     </div>
@@ -120,17 +170,17 @@
                     </div>
 
                     <div class="col-md-6 gx-5 mb-4">
-                        <h4><strong>Facilis consequatur eligendi</strong></h4>
+                        <h4><strong>Introduction about us</strong></h4>
                         <p class="text-muted">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
-                            eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
-                            sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+                            Hello to the customer, We are Team_6 from KOF. Our Team has
+                            3 members: TRAN MANH HUNG, TRINH ANH DUC, NGUYEN DUC HOA. We decided to create this 
+                            with the purpose just want you, our special customer to enjoy our food.  
                         </p>
-                        <p><strong>Doloremque vero ex debitis veritatis?</strong></p>
-                        <p class="text-muted">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
-                            nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
-                            alias, unde optio accusantium soluta, iusto molestiae adipisci et?
+                        <p><strong>History</strong></p>
+                        <p class="text-muted">                          
+                            KOF is stands for King Of Food, We made it in 2022. It just the beta version to
+                            sell the most yummy food in the world.
+
                         </p>
                     </div>
                 </div>
@@ -141,24 +191,24 @@
 
             <!--Section: Content-->
             <section class="text-center">
-                <h4 class="mb-5"><strong>Facilis consequatur eligendi</strong></h4>
+                <h4 class="mb-5"><strong>CATEGORY</strong></h4>
 
                 <div class="row">
                     <div class="col-lg-4 col-md-12 mb-4">
                         <div class="card">
                             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+                                <img src="https://t3.ftcdn.net/jpg/03/35/51/06/360_F_335510693_HY7mLg3ARdLccKoXk3m66NLDpJRJh51p.jpg" class="img-fluid" />
                                 <a href="#!">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 </a>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
+                                <h5 class="card-title">Food</h5>
                                 <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the
-                                    card's content.
+                                    For the yummy food in the world like: hamburger, Pizza, Donut,...
+
                                 </p>
-                                <a href="#!" class="btn btn-primary">Button</a>
+                                <a href="food.jsp" class="btn btn-primary">CLICK FOR MORE</a>
                             </div>
                         </div>
                     </div>
@@ -166,18 +216,17 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card">
                             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="https://mdbootstrap.com/img/new/standard/nature/023.jpg" class="img-fluid" />
+                                <img src="https://cdn.dribbble.com/users/7436718/screenshots/16198370/media/ca2b3a72659741691286748e3ab099b8.jpg?compress=1&resize=400x300" class="img-fluid" />
                                 <a href="#!">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 </a>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
+                                <h5 class="card-title">Drinking</h5>
                                 <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the
-                                    card's content.
+                                    For the delicious drinks like: Avorcado juice, Orange juice, Grape juice,...
                                 </p>
-                                <a href="#!" class="btn btn-primary">Button</a>
+                                <a href="drinking.jsp" class="btn btn-primary">CLICK FOR MORE</a>
                             </div>
                         </div>
                     </div>
@@ -185,18 +234,18 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card">
                             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
+                                <img src="https://www.foodbusinessnews.net/ext/resources/2021/4/Onnit_Lead.jpg?t=1619524614&width=1080" class="img-fluid" />
                                 <a href="#!">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 </a>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
+                                <h5 class="card-title">Supplement For GYMER</h5>
                                 <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the
-                                    card's content.
+                                    We sell the good suplements for you to support trainning in Workout. Want to 
+                                    try hard to build your beautiful muscle, just come here ! 
                                 </p>
-                                <a href="#!" class="btn btn-primary">Button</a>
+                                <a href="supplement.jsp" class="btn btn-primary">CLICK FOR MORE</a>
                             </div>
                         </div>
                     </div>
@@ -212,20 +261,20 @@
         <hr class="m-0" />
 
         <div class="text-center py-4 align-items-center">
-            <p>Follow MDB on social media</p>
-            <a href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" class="btn btn-primary m-1" role="button"
+            <p>Follow Team 6 Right Now</p>
+            <a  class="btn btn-primary m-1" role="button"
                 rel="nofollow" target="_blank">
                 <i class="fab fa-youtube"></i>
             </a>
-            <a href="https://www.facebook.com/mdbootstrap" class="btn btn-primary m-1" role="button" rel="nofollow"
+            <a  class="btn btn-primary m-1" role="button" rel="nofollow"
                 target="_blank">
                 <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="https://twitter.com/MDBootstrap" class="btn btn-primary m-1" role="button" rel="nofollow"
+            <a  class="btn btn-primary m-1" role="button" rel="nofollow"
                 target="_blank">
                 <i class="fab fa-twitter"></i>
             </a>
-            <a href="https://github.com/mdbootstrap/mdb-ui-kit" class="btn btn-primary m-1" role="button" rel="nofollow"
+            <a  class="btn btn-primary m-1" role="button" rel="nofollow"
                 target="_blank">
                 <i class="fab fa-github"></i>
             </a>
@@ -233,14 +282,16 @@
 
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: #fff;">
-            © 2020 Copyright:
-            <a class="text-dark" href="https://mdbootstrap.com/">TeamThieuNang.com</a>
+            © 2022 Copyright:
+            <a class="text-dark" >Team6.com</a>
         </div>
         <!-- Copyright -->
     </footer>
     <!--Footer-->
 </body>
+    
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
-
+<script src="https://kit.fontawesome.com/150675defe.js" crossorigin="anonymous"></script>
+    
 </html>
