@@ -5,6 +5,7 @@
 package InformationControl;
 
 import Context.DBContext;
+import Model.User;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -45,6 +46,22 @@ public class UserDAO {
             System.out.println("Login error:" + e.getMessage());
         }
         return false;
+    }
+    
+    public User userLogin(String email, String pass) {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strSelect = "select * from tblUser where email='" + email + "' and pass='" + pass + "'";
+            rs = stm.executeQuery(strSelect);
+            while (rs.next()) {
+                User u =new User(email, pass);
+                System.out.println("Login successful");
+                return u;
+            }
+        } catch (Exception e) {
+            System.out.println("Login error:" + e.getMessage());
+        }
+        return null;
     }
 
     

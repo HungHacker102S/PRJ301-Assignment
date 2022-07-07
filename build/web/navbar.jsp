@@ -4,6 +4,7 @@
     Author     : ASUS
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
     <div class="container-fluid">
@@ -31,12 +32,20 @@
             </ul>
 
             <ul class="navbar-nav d-flex flex-row">
-                <li class="nav-item me-3 me-lg-0">
-                    <a class="nav-link" href="Signin"
-                       rel="nofollow">
+                <c:if test="${sessionScope.user==null}">
+                    <li class="nav-item me-3 me-lg-0">
+                    <a class="nav-link" href="Signin" rel="nofollow">
                         <span>Login</span>
                     </a>
                 </li>
+                </c:if>
+                <c:if test="${sessionScope.user!=null}">
+                    <li class="nav-item me-3 me-lg-0">
+                    <a class="nav-link" href="Signout" rel="nofollow">
+                        <span>Logout</span>
+                    </a>
+                </li>
+                </c:if>
                 <li class="nav-item me-3 me-lg-0">
                     <a class="nav-link" href="Signup" rel="nofollow">
                         <span>Register</span>

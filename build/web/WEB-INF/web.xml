@@ -19,6 +19,10 @@
         <servlet-name>Signup</servlet-name>
         <servlet-class>Controller.Signup</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Signout</servlet-name>
+        <servlet-class>Controller.Signout</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserDAO</servlet-name>
         <url-pattern>/UserDAO</url-pattern>
@@ -34,6 +38,10 @@
     <servlet-mapping>
         <servlet-name>Signup</servlet-name>
         <url-pattern>/Signup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Signout</servlet-name>
+        <url-pattern>/Signout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

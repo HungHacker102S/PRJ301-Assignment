@@ -84,11 +84,6 @@
                                             <button type="submit" class="btn btn-primary btn-block mb-4">
                                                 Sign in
                                             </button>
-                                            <c:if test="${not empty message}">
-                                                <div>
-                                                    ${message}
-                                                </div>
-                                            </c:if>
                                         </form>
                                     </div>
                                 </div>

@@ -5,12 +5,9 @@
 
 package Controller;
 
-import InformationControl.UserDAO;
-import Model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -20,7 +17,7 @@ import jakarta.servlet.http.HttpSession;
  *
  * @author MSI Modern 14
  */
-public class Signin extends HttpServlet {
+public class Signout extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -32,18 +29,10 @@ public class Signin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        UserDAO u = new UserDAO();
-        if(!u.checkLogin(email, password)) {
-            request.getRequestDispatcher("signin.jsp").forward(request, response);
-        } else {
-            HttpSession session = request.getSession();
-            User user = u.userLogin(email, password);
-            session.setAttribute("user", user);
-            response.sendRedirect("home.jsp");
-        }
-    }
+        HttpSession session = request.getSession();
+        session.removeAttribute("user");
+        response.sendRedirect("home.jsp");
+    } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** 
