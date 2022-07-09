@@ -9,6 +9,7 @@ import Model.User;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -68,6 +69,50 @@ public class UserDAO {
         return null;
     }
 
+    public boolean checkEmail(String email) {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strSelect = "select * from Account where email='" + email + "'";
+            rs = stm.executeQuery(strSelect);
+            while (rs.next()) {
+                System.out.println("Exist");
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
     
+    public void signUp(String email, String pass, String firstname, String lastname, String phonenum) {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strUpdate = "insert into Account (email, pass, firstname, lastname, phonenum, isAdmin) values ('" + email + "','" + pass + "','" + firstname + "','" + lastname + "','" + phonenum + "','" + 0 + "');";
+            stm.executeUpdate(strUpdate);
+            System.out.println("Update success!");
+        } catch (Exception e) {
+            System.out.println("error:" + e.getMessage());
+        }
+    }
 
+    public ArrayList<User> getAllUser() {
+        ArrayList<User> list = new ArrayList<User>();
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strSelect = "select * from tblUser";
+            rs = stm.executeQuery(strSelect);
+            while (rs.next()) {
+                String email=rs.getString(2);
+                String pass=rs.getString(3);
+                String firstname=rs.getString(4);
+                String lastname=rs.getString(5);
+                String phonenum=rs.getString(6);
+                int permit = rs.getInt(7);
+                list.add(new User(email, pass, firstname, lastname, phonenum, permit));
+            }
+        } catch (Exception e) {
+            System.out.println("error:" + e.getMessage());
+        }
+        return list;
+    }
 }

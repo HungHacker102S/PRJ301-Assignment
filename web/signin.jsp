@@ -26,6 +26,16 @@
                 color: black !important;
             }
         </style>
+        <script>
+            function validateForm() {
+                var x = document.forms["myForm"]["email"].value;
+                var y = document.forms["myForm"]["password"].value;
+                if (x == "" || x == null || y == "" || y == null) {
+                    alert("Invalid name or password");
+                    return false;
+                }
+            }
+        </script>
     </head>
 
 
@@ -111,7 +121,7 @@
                                          ">
                                         <div class="card-body p-5 shadow-5 text-center">
                                             <h2 class="fw-bold mb-5">Sign in</h2>
-                                            <form>
+                                            <form name="myForm" method="post" onsubmit="return validateForm()" required>
                                                 <!-- Email input -->
                                                 <div class="form-outline mb-4">
                                                     <input type="email" name="email" value="${email}" id="form3Example3" class="form-control" />
