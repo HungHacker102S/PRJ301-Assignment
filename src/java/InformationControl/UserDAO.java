@@ -54,8 +54,12 @@ public class UserDAO {
             String strSelect = "select * from Account where email='" + email + "' and pass='" + pass + "'";
             rs = stm.executeQuery(strSelect);
             while (rs.next()) {
-                User u =new User(email, pass);
+                String firstname = rs.getString(4);
+                String lastname = rs.getString(5);
+                String phonenum = rs.getString(6);
+                int permit = rs.getInt(7);
                 System.out.println("Login successful");
+                User u = new User(email, pass, firstname, lastname, phonenum, permit);
                 return u;
             }
         } catch (Exception e) {

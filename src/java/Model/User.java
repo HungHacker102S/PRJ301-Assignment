@@ -9,9 +9,9 @@ package Model;
  * @author MSI Modern 14
  */
 public class User {
-    private String email, password, firstname, lastname, address, phonenum, permit;
-    private boolean gender;
-
+    private String email, password, firstname, lastname, phonenum;
+    private int permit;
+    
     public User() {
     }
     
@@ -20,15 +20,13 @@ public class User {
         this.password = password;
     }
     
-    public User(String email, String password, String firstname, String lastname, String address, String phonenum, String permit, boolean gender) {
+    public User(String email, String password, String firstname, String lastname, String phonenum, int permit) {
         this.email = email;
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.address = address;
         this.phonenum = phonenum;
         this.permit = permit;
-        this.gender = gender;
     }
 
     public String getEmail() {
@@ -63,14 +61,6 @@ public class User {
         this.lastname = lastname;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getPhonenum() {
         return phonenum;
     }
@@ -79,21 +69,12 @@ public class User {
         this.phonenum = phonenum;
     }
 
-    public String getPermit() {
+    public int getPermit() {
         return permit;
     }
 
-    public void setPermit(String permit) {
+    public void setPermit(int permit) {
         this.permit = permit;
     }
 
-    public boolean isGender() {
-        return gender;
-    }
-
-    public void setGender(boolean gender) {
-        this.gender = gender;
-    }
-    
-    
 }
