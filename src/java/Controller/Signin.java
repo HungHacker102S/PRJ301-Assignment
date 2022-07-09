@@ -34,14 +34,15 @@ public class Signin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        String message=null;
         UserDAO u = new UserDAO();
+        HttpSession session = request.getSession();
         if(!u.checkLogin(email, password)) {
             request.getRequestDispatcher("signin.jsp").forward(request, response);
         } else {
-            HttpSession session = request.getSession();
             User user = u.userLogin(email, password);
             session.setAttribute("user", user);
-            response.sendRedirect("home.jsp");
+            request.getRequestDispatcher("home.jsp").forward(request, response);
         }
     }
 

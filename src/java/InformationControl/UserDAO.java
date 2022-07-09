@@ -99,7 +99,7 @@ public class UserDAO {
         ArrayList<User> list = new ArrayList<User>();
         try {
             stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            String strSelect = "select * from tblUser";
+            String strSelect = "select * from Account";
             rs = stm.executeQuery(strSelect);
             while (rs.next()) {
                 String email=rs.getString(2);

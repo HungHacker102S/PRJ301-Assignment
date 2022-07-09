@@ -57,7 +57,7 @@
                         <ul class="navbar-nav d-flex flex-row">
                             <c:if test="${sessionScope.user==null}">
                                 <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="Signin" rel="nofollow">
+                                    <a class="nav-link" href="signin.jsp" rel="nofollow">
                                         <span>Login</span>
                                     </a>
                                 </li>
@@ -71,7 +71,7 @@
                             </c:if>
                             <c:if test="${sessionScope.user!=null}">
                                 <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="Signout" rel="nofollow">
+                                    <a class="nav-link" href="signout.jsp" rel="nofollow">
                                         <span>Logout</span>
                                     </a>
                                 </li>

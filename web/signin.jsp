@@ -26,16 +26,7 @@
                 color: black !important;
             }
         </style>
-        <script>
-            function validateForm() {
-                var x = document.forms["myForm"]["email"].value;
-                var y = document.forms["myForm"]["password"].value;
-                if (x == "" || x == null || y == "" || y == null) {
-                    alert("Invalid name or password");
-                    return false;
-                }
-            }
-        </script>
+
     </head>
 
 
@@ -71,7 +62,7 @@
                         <ul class="navbar-nav d-flex flex-row">
                             <c:if test="${sessionScope.user==null}">
                                 <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="Signin" rel="nofollow">
+                                    <a class="nav-link" href="signin.jsp" rel="nofollow">
                                         <span>Login</span>
                                     </a>
                                 </li>
@@ -84,7 +75,7 @@
                                 </li>
                             </c:if>
                             <li class="nav-item me-3 me-lg-0">
-                                <a class="nav-link" href="Signup" rel="nofollow">
+                                <a class="nav-link" href="signup.jsp" rel="nofollow">
                                     <span>Register</span>
                                 </a>
                             </li>
@@ -121,24 +112,22 @@
                                          ">
                                         <div class="card-body p-5 shadow-5 text-center">
                                             <h2 class="fw-bold mb-5">Sign in</h2>
-                                            <form name="myForm" method="post" onsubmit="return validateForm()" required>
+                                            <form method="post">
                                                 <!-- Email input -->
                                                 <div class="form-outline mb-4">
-                                                    <input type="email" name="email" value="${email}" id="form3Example3" class="form-control" />
+                                                    <input type="email" name="email" value="${email}" id="form3Example3" class="form-control" required />
                                                     <label class="form-label" for="form3Example3">Email address</label>
                                                 </div>
 
                                                 <!-- Password input -->
                                                 <div class="form-outline mb-4">
-                                                    <input type="password" name="password" value="${password}" id="form3Example4" class="form-control" />
+                                                    <input type="password" name="password" value="${password}" id="form3Example4" class="form-control" required/>
                                                     <label class="form-label" for="form3Example4">Password</label>
                                                 </div>
-
                                                 <!-- Submit button -->
                                                 <button type="submit" class="btn btn-primary btn-block mb-4">
                                                     Sign in
                                                 </button>
-
                                                 <!-- Forgot button -->
                                                 <a href="forgotpassword.jsp">
                                                     Forgot Password ?

@@ -37,18 +37,13 @@ public class Signup extends HttpServlet {
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
         String phonenum = request.getParameter("phonenum");
-        
-        UserDAO u = new UserDAO();
-        ArrayList<User> user = u.getAllUser();
-        if(email==null)
-            response.sendRedirect("Signup");
-        if(u.checkEmail(email))
-            request.getRequestDispatcher("Signup").forward(request, response);
+        UserDAO user = new UserDAO();
+        if(user.checkEmail(email))
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
         else {
-            u.signUp(email, pass, firstname, lastname, phonenum);
-            request.getRequestDispatcher("Signin").forward(request, response);
+            user.signUp(email, pass, firstname, lastname, phonenum);
+            request.getRequestDispatcher("signin.jsp").forward(request, response);
         }
-        
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
