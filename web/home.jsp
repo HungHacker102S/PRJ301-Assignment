@@ -20,6 +20,8 @@
 
     <link rel="stylesheet" href="css/style.css">
     
+    
+    
 </head>
 
 
@@ -34,7 +36,8 @@
 
                 <!-- Navbar brand -->
                 <a class="navbar-brand nav-link" href=".">
-                    <strong>KOF</strong>                   
+                    
+                   <img src="images/logo.svg" width="50" class="rounded-circle" alt="alt"/>                 
                 </a>
 
                 <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
@@ -208,7 +211,7 @@
                                     For the yummy food in the world like: hamburger, Pizza, Donut,...
 
                                 </p>
-                                <a href="food.jsp" class="btn btn-primary">CLICK FOR MORE</a>
+                                <a href="category?category=food" class="btn btn-primary">CLICK FOR MORE</a>
                             </div>
                         </div>
                     </div>
@@ -226,7 +229,7 @@
                                 <p class="card-text">
                                     For the delicious drinks like: Avorcado juice, Orange juice, Grape juice,...
                                 </p>
-                                <a href="drinking.jsp" class="btn btn-primary">CLICK FOR MORE</a>
+                                <a href="category?category=drink" class="btn btn-primary">CLICK FOR MORE</a>
                             </div>
                         </div>
                     </div>
@@ -245,7 +248,7 @@
                                     We sell the good suplements for you to support trainning in Workout. Want to 
                                     try hard to build your beautiful muscle, just come here ! 
                                 </p>
-                                <a href="supplement.jsp" class="btn btn-primary">CLICK FOR MORE</a>
+                                <a href="category?category=supplement" class="btn btn-primary">CLICK FOR MORE</a>
                             </div>
                         </div>
                     </div>
