@@ -22,7 +22,7 @@ insert into Product(pname, quantity, image, pPrice, cid) values ('Avorcado Smoot
 insert into Product(pname, quantity, image, pPrice, cid) values ('Watermelon juice', 100, 'https://cdn.cet.edu.vn/wp-content/uploads/2020/06/cach-lam-nuoc-ep-dua-hau.jpg', 8, 2);
 insert into Product(pname, quantity, image, pPrice, cid) values ('Orange juice', 100, 'https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2022/2/19/cach-lam-nuoc-cam-ep-ngon-va-thom-ket-hop-voi-le-va-gung-5-1645248090817401855254.jpg', 15, 2);
 insert into Product(pname, quantity, image, pPrice, cid) values ('Lemon Tea', 100, 'https://www.unileverfoodsolutions.com.vn/dam/global-ufs/mcos/phvn/vietnam/calcmenu/recipes/VN-recipes/other/energizing-lemon-tea/main-header.jpg', 3, 2);
-insert into Product(pname, quantity, image, pPrice, cid) values ('Coconut Water', 100, 'https://images.immediate.co.uk/production/volatile/sites/30/2017/08/coconut-water-bb9cfe8.jp', 2407, 2);
+insert into Product(pname, quantity, image, pPrice, cid) values ('Coconut Water', 100, 'https://images.immediate.co.uk/production/volatile/sites/30/2017/08/coconut-water-bb9cfe8.jpg', 2407, 2);
 insert into Product(pname, quantity, image, pPrice, cid) values ('Water', 100, 'https://www.priorlakemn.gov/home/showpublishedimage/1078/637384528077200000', 1803, 2);
 
 -- Supplement

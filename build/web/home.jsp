@@ -35,8 +35,7 @@
             <div class="container-fluid">
 
                 <!-- Navbar brand -->
-                <a class="navbar-brand nav-link" href=".">
-                    
+                <a class="navbar-brand nav-link" href=".">                   
                    <img src="images/logo.svg" width="50" class="rounded-circle" alt="alt"/>                 
                 </a>
 
@@ -246,7 +245,7 @@
                                 <h5 class="card-title">Supplement For GYMER</h5>
                                 <p class="card-text">
                                     We sell the good suplements for you to support trainning in Workout. Want to 
-                                    try hard to build your beautiful muscle, just come here ! 
+                                    try hard to build up your beautiful muscle, just come here ! 
                                 </p>
                                 <a href="category?category=supplement" class="btn btn-primary">CLICK FOR MORE</a>
                             </div>

@@ -74,16 +74,19 @@
     </header>
 
        <div class="item">
-                    <div class="row">
+           <section class="text-center">
+               <div class="row">
                         <c:forEach items="${c}" var="x">
-                            <div class="col-sm-4">
+                            <div class="col-sm-4" style="border:1px pink solid">
                                 <img class="img-responsive img-fluid" style="height:300px" src="${x.getImage()}"/><br>
                                 <p style="text-align: center; text-transform: uppercase; font-size: 15px">${x.getpName()}</p>
                                 <p style="text-align: center; font-size: 14px">
                                 Price: <span style="font-size: 20px">${x.getPrice2()}$</span></p>
+                                <a href="payment?pid=${x.getProductId()}" class="btn btn-primary">CLICK TO ORDER</a>
                             </div>
                         </c:forEach>
                     </div>
+               </section>
                 </div>
        
 

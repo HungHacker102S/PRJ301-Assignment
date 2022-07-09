@@ -18,13 +18,123 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
-
+    <!--css-->
     <link rel="stylesheet" href="css/style.css">
         
+    
+    
+    
      <style>
        .navbar-light .nav-link {
            color: black !important;
-       }
+       }    
+       /*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+.store a{
+    color: black;
+}
+
+.descript{
+    border-right: 1px solid grey;
+    margin-bottom: 15px;
+}
+
+.detail{
+    border-bottom: 1px solid grey;
+}
+
+.choose_size{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.choose_size select{
+    height: 41px;
+    font-weight: bold;
+}
+.choose_quantity{
+    opacity:1;
+    display:inline-block;
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    white-space:nowrap;
+    vertical-align:top;
+}
+
+.is-form {
+    overflow:hidden;
+    position:relative;
+    background-color:#f9f9f9;
+    height:2.2rem;
+    width:1.9rem;
+    padding:0;
+    text-shadow:1px 1px 1px #fff;
+    border:1px solid #ddd;
+}
+
+.is-form:focus,.input-text:focus {
+    outline:none;
+}
+.is-form.minus {
+    margin-left: 30px;
+    border-radius:4px 0 0 4px;
+}
+.is-form.plus {
+    border-radius:0 4px 4px 0;
+}
+.input-qty {
+    width:50px;
+    background-color:#fff;
+    height:2.2rem;
+    text-align:center;
+    font-size:1rem;
+    display:inline-block;
+    vertical-align:top;
+    margin:0;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-left:0;
+    border-right:0;
+    padding:0;
+}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0;
+}
+
+#order{
+    background-color: red;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    font-size: 20px;
+    margin-left: 10px;
+    padding: 5px 30px;
+    font-weight: bold;
+}
+
+#alert_choose_size{
+    color: #fff;
+    display: inline-block;
+    background-color: #a94442;
+    padding: 0 5px;
+    margin: 5px 0;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+#alert_login{
+    color: #fff;
+    display: inline-block;
+    background-color: #a94442;
+    padding: 0 5px;
+    margin: 5px 0;
+    border-radius: 3px;
+    font-size: 11px;
+}
+       
    </style>
              
     </head>
@@ -74,21 +184,39 @@
     </header>
 
        <div class="item">
-           <section class="text-center">
-               <div class="row">
-                        <c:forEach items="${c}" var="x">
-                            <div class="col-sm-4" style="border:1px pink solid">
-                                <img class="img-responsive img-fluid" style="height:300px" src="${x.getImage()}"/><br>
-                                <p style="text-align: center; text-transform: uppercase; font-size: 15px">${x.getpName()}</p>
-                                <p style="text-align: center; font-size: 14px">
-                                Price: <span style="font-size: 20px">${x.getPrice2()}$</span></p>
-                                <a href="payment?pid=${x.getProductId()}" class="btn btn-primary">CLICK TO ORDER</a>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img class="img-responsive img-fluid" src="${product.getImage()}"/>
+                        </div>
+                        <div class="col-sm-8">
+                            <p style="font-size: 26px; font-weight: bold">${product.getpName()}</p>
+                            <div class="row detail">
+                                <div class="col-sm-4 descript" style="font-size: 12.98px">
+                                    
+                                </div>
+                                <div class="col-sm-8">
+                                    <p><span>Price: </span><span style="color: red; font-size: 32px; font-weight: 500">${product.getPrice2()} $</span></p>
+                                    <p style="font-size: 11px; font-weight: bold">FREE SHIP FROM ALL CITIES</p>
+                                </div>
                             </div>
-                        </c:forEach>
+
+                            <form action="checkout" method="POST" onsubmit="return notAllowToOrder()">                               
+                                <div class="choose_quantity">
+                                    <span style="font-weight: bold">Quantity:</span>
+                                    <input class="minus is-form" type="button" value="-" onclick="decrease()">
+                                    <input class="input-qty" name="quantity" type="text" value="1" oninput="checkQuantity()">
+                                    <input class="plus is-form" type="button" value="+" onclick="increase()">
+                                </div>
+
+                                <input type="submit" value="Order Now" id="order" onclick="notAllowToOrder()">
+                            </form>
+
+                            <div id="alert_login">
+                                Vui lòng đăng nhập trước khi đặt hàng
+                            </div>
+                        </div>
                     </div>
-               </section>
-                </div>
-       
+                </div> 
 
         <!--Footer-->
         <footer class="bg-light text-lg-start">
