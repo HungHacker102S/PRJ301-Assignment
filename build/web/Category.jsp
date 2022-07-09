@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>KOF</title>
         <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
@@ -20,7 +20,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="css/style.css">
-        
+        <!--logo-->
+    <link rel="icon" href="images/logo.svg">
      <style>
        .navbar-light .nav-link {
            color: black !important;
@@ -82,6 +83,8 @@
                                 <p style="text-align: center; text-transform: uppercase; font-size: 15px">${x.getpName()}</p>
                                 <p style="text-align: center; font-size: 14px">
                                 Price: <span style="font-size: 20px">${x.getPrice2()}$</span></p>
+                                <p style="text-align: center; font-size: 14px">
+                                Quantity: <span style="font-size: 20px">${x.getQuantity()}</span></p>
                                 <a href="payment?pid=${x.getProductId()}" class="btn btn-primary">CLICK TO ORDER</a>
                             </div>
                         </c:forEach>

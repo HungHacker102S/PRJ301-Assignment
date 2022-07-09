@@ -7,21 +7,21 @@
 }
 
 .carousel-item:nth-child(1) {
-    background-image: url('../images/banner-1.jpg');
+    background-image: url('https://goldbelly.imgix.net//uploads/collection/main_image/805/sale.e9feb6ff12c74d749173b83c7c39c6a1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
 .carousel-item:nth-child(2) {
-    background-image: url('../images/banner-2.jpg');
+    background-image: url('https://previews.123rf.com/images/redlinevector/redlinevector1805/redlinevector180501383/101885235-big-sale-welcome-summer-banner-design-cold-drink-pineapple-toy-flamingo-yellow-travel-case-beach-oce.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
 .carousel-item:nth-child(3) {
-    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg');
+    background-image: url('https://thumbs.dreamstime.com/b/tasty-burgers-beef-tomato-cheese-onion-cucumber-lettuce-pink-background-top-view-copy-space-fast-food-banner-take-away-133646884.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -30,7 +30,7 @@
 /* Height for devices larger than 576px */
 @media (min-width: 992px) {
     #introCarousel {
-        margin-top: -58.59px;
+        margin-top: -75px;
     }
 
     #introCarousel,

@@ -19,16 +19,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="css/style.css">
-    
-    
-    
+    <!--logo-->
+    <link rel="icon" href="images/logo.svg">
+       
 </head>
 
 
 
     <body>
-    <!--Main Navigation-->
-    
+    <!--Main Navigation-->    
     <header>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
@@ -63,12 +62,12 @@
                         <li class="nav-item me-3 me-lg-0">
                             <a class="nav-link" href="signin.jsp"
                                 rel="nofollow">
-                                <span>Login</span>
+                                <span>Sign in</span>
                             </a>
                         </li>
                         <li class="nav-item me-3 me-lg-0">
                             <a class="nav-link" href="signup.jsp" rel="nofollow">
-                                <span>Register</span>
+                                <span>Sign up</span>
                             </a>
                         </li>
                     </ul>
@@ -88,52 +87,46 @@
 
             <!-- Inner -->
             <div class="carousel-inner">
-                <!-- Single item -->
+                <!-- Single item 1-->
                 <div class="carousel-item active">
                     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
                         <div class="d-flex justify-content-center align-items-center h-100">
                             <div class="text-white text-center">
-                                <h1 class="mb-3">! SALE TO DIE !</h1>
-                                <h5 class="mb-4">-38% sales hehehe</h5>
+                                <h1 class="mb-3">! SALE TO DIE FOR FOOD !</h1>
+                                <h5 class="mb-4">! -24% FOR FIRST 7 ACCOUNTS !</h5>
                                 <a class="btn btn-outline-light btn-lg m-2"
                                     href="#readmore" role="button" rel="nofollow"
-                                    target="_blank">READMORE</a>
+                                    >READ MORE</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Single item -->
+                <!-- Single item 2-->
                 <div class="carousel-item">
                     <div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
                         <div class="d-flex justify-content-center align-items-center h-100">
                             <div class="text-white text-center">
-                                <h2>! BIG SALE FOR DRINK !</h2>
-                                <h2>-50% sale of for Avorcado</h2>
-                                <h2>Amazing</h2>
+                                <h1 class="mb-3">! BIG SALE FOR DRINK !</h1>
+                                <h5 class="mb-4">! -18% FOR FIRST 3 ACCOUNTS !</h5>
+                                   
                                 <a class="btn btn-outline-light btn-lg m-2"
                                     href="#readmore" role="button" rel="nofollow"
-                                    target="_blank">READMORE</a>
+                                    >READ MORE</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Single item -->
+                <!-- Single item 3-->
                 <div class="carousel-item">
-                    <div class="mask" style="
-                      background: linear-gradient(
-                        45deg,
-                        rgba(29, 236, 197, 0.7),
-                        rgba(91, 14, 214, 0.7) 100%
-                      );
-                    ">
+                    <div class="mask">
                         <div class="d-flex justify-content-center align-items-center h-100">
                             <div class="text-white text-center">
-                                <h2>!! JUST SIGNUP AND YOU WILL HAVE VOUCHER !!</h2>
+                                <h1 class="mb-3">! SIGN UP FOR BEING OUR FIRST CUSTOMERS !</h1>
                                 <a class="btn btn-outline-light btn-lg m-2"
-                                    href="https://mdbootstrap.com/docs/standard/content-styles/masks/" target="_blank"
-                                    role="button">SIGN IN</a>
+                                    href="signup.jsp" rel="nofollow"
+                                    role="button">SIGN UP</a>
                             </div>
                         </div>
                     </div>
@@ -159,7 +152,7 @@
     <main class="mt-5">
         <div class="container">
             <!--Section: Content-->
-            <section>
+            <section id="about-us">
                 <div class="row">
                     <div class="col-md-6 gx-5 mb-4">
                         <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5"
@@ -182,7 +175,6 @@
                         <p class="text-muted">                          
                             KOF is stands for King Of Food, We made it in 2022. It just the beta version to
                             sell the most yummy food in the world.
-
                         </p>
                     </div>
                 </div>
@@ -192,7 +184,7 @@
             <hr class="my-5" />
 
             <!--Section: Content-->
-            <section class="text-center">
+            <section class="text-center" id="category">
                 <h4 class="mb-5"><strong>CATEGORY</strong></h4>
 
                 <div class="row">

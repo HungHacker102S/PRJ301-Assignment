@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>KOF</title>
         <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
@@ -21,7 +21,8 @@
     <!--css-->
     <link rel="stylesheet" href="css/style.css">
         
-    
+    <!--logo-->
+    <link rel="icon" href="images/logo.svg">
     
     
      <style>
@@ -99,6 +100,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     border-right:0;
     padding:0;
 }
+
 .input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
     -webkit-appearance:none;
     margin:0;
@@ -196,24 +198,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
                                 </div>
                                 <div class="col-sm-8">
                                     <p><span>Price: </span><span style="color: red; font-size: 32px; font-weight: 500">${product.getPrice2()} $</span></p>
-                                    <p style="font-size: 11px; font-weight: bold">FREE SHIP FROM ALL CITIES</p>
+                                    <p style="font-size: 11px; font-weight: bold">FREE SHIP FROM ALL CITIES IN VIET NAM</p>
                                 </div>
                             </div>
 
-                            <form action="checkout" method="POST" onsubmit="return notAllowToOrder()">                               
+                            <form>                               
                                 <div class="choose_quantity">
                                     <span style="font-weight: bold">Quantity:</span>
                                     <input class="minus is-form" type="button" value="-" onclick="decrease()">
                                     <input class="input-qty" name="quantity" type="text" value="1" oninput="checkQuantity()">
                                     <input class="plus is-form" type="button" value="+" onclick="increase()">
                                 </div>
-
                                 <input type="submit" value="Order Now" id="order" onclick="notAllowToOrder()">
                             </form>
-
-                            <div id="alert_login">
+<!--                            <div id="alert_login">
                                 Vui lòng đăng nhập trước khi đặt hàng
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div> 

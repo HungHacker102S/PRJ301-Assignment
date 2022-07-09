@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Forgot Password</title>
+        <title>KOF</title>
     
     
     <!-- Font Awesome -->
@@ -21,6 +21,8 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+    <!--logo-->
+    <link rel="icon" href="images/logo.svg">
     <style>
         .navbar-light .nav-link {
             color: black !important;
