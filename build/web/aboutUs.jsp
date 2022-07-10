@@ -30,8 +30,8 @@
                 <div class="container-fluid">
 
                     <!-- Navbar brand -->
-                    <a class="navbar-brand nav-link" href="Home">
-                        <strong>KOF</strong>                   
+                    <a class="navbar-brand nav-link" href="Home">                   
+                        <img src="images/logo.svg" width="50" class="rounded-circle" alt="alt"/>                 
                     </a>
 
                     <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"

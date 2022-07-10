@@ -39,7 +39,7 @@
                 <div class="container-fluid">
                     <!-- Navbar brand -->
                     <a class="navbar-brand nav-link" href="Home">
-                        <strong>KOF</strong>
+                        <img src="images/logo.svg" width="50" class="rounded-circle" alt="alt"/>
                     </a>
                     <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
                             data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
@@ -112,7 +112,7 @@
                                          ">
                                         <div class="card-body p-5 shadow-5 text-center">
                                             <h2 class="fw-bold mb-5">Sign in</h2>
-                                            <form method="post">
+                                            <form method="post" action="Signin">
                                                 <!-- Email input -->
                                                 <div class="form-outline mb-4">
                                                     <input type="email" name="email" value="${email}" id="form3Example3" class="form-control" required />

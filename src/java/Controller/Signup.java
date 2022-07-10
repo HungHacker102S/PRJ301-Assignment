@@ -6,15 +6,11 @@
 package Controller;
 
 import InformationControl.UserDAO;
-import Model.User;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 
 /**
  *
@@ -38,8 +34,8 @@ public class Signup extends HttpServlet {
         String lastname = request.getParameter("lastname");
         String phonenum = request.getParameter("phonenum");
         UserDAO user = new UserDAO();
-        if(user.checkEmail(email))
-            request.getRequestDispatcher("signup.jsp").forward(request, response);
+        if(user.checkEmail(email) || email==null || pass==null)
+            response.sendRedirect("signup.jsp");
         else {
             user.signUp(email, pass, firstname, lastname, phonenum);
             request.getRequestDispatcher("signin.jsp").forward(request, response);

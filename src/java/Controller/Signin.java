@@ -8,9 +8,7 @@ package Controller;
 import InformationControl.UserDAO;
 import Model.User;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -34,7 +32,6 @@ public class Signin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        String message=null;
         UserDAO u = new UserDAO();
         HttpSession session = request.getSession();
         if(!u.checkLogin(email, password)) {

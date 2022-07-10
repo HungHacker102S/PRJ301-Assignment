@@ -37,9 +37,8 @@
                 <div class="container-fluid">
                     <!-- Navbar brand -->
                     <a class="navbar-brand nav-link" href="Home">
-                        <strong>KOF</strong>
-
-                    </a>
+                    <img src="images/logo.svg" width="50" class="rounded-circle" alt="alt"/>
+                </a>
                     <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
                             data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
                             aria-label="Toggle navigation">
@@ -116,7 +115,7 @@
                             <div class="row d-flex justify-content-center">
                                 <div class="col-lg-8">
                                     <h2 class="fw-bold mb-5">Sign up now</h2>
-                                    <form method="post">
+                                    <form method="post" action="Signup">
                                         <!-- 2 column grid layout with text inputs for the first and last names -->
                                         <div class="row">
                                             <div class="col-md-6 mb-4">
