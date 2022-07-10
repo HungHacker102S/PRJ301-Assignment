@@ -31,6 +31,10 @@
         <servlet-name>Payment</servlet-name>
         <servlet-class>Controller.Payment</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Forgotpass</servlet-name>
+        <servlet-class>Controller.Forgotpass</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserDAO</servlet-name>
         <url-pattern>/UserDAO</url-pattern>
@@ -58,6 +62,10 @@
     <servlet-mapping>
         <servlet-name>Payment</servlet-name>
         <url-pattern>/Payment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Forgotpass</servlet-name>
+        <url-pattern>/Forgotpass</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

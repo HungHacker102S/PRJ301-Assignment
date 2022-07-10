@@ -110,7 +110,7 @@
                                          ">
                                         <div class="card-body p-5 shadow-5 text-center">
                                             <h2 class="fw-bold mb-5">Forgot Password</h2>
-                                            <form>
+                                            <form method="post" action="Forgotpass">
                                                 <!-- Email input -->
                                                 <div class="form-outline mb-4">
                                                     <input type="email" name="email" value="${email}" id="form3Example3" class="form-control" required/>
@@ -119,18 +119,18 @@
 
                                                 <!-- Phone Number input -->
                                                 <div class="form-outline mb-4">
-                                                    <input type="password" name="password" value="${password}" id="form3Example4" class="form-control" required/>
+                                                    <input type="text" name="phonenum" value="${phonenum}" id="form3Example4" class="form-control" required/>
                                                     <label class="form-label" for="form3Example4">Enter Your Phone Number</label>
                                                 </div>
 
                                                 <!-- Submit button -->
                                                 <button type="submit" class="btn btn-primary btn-block mb-4">
-                                                    Sign in
+                                                    Submit
                                                 </button>
 
                                                 <!-- Password input -->
                                                 <div class="form-outline mb-4">
-                                                    <input type="text" id="form3Example4" class="form-control" value="Your Password will display here"  readonly/>
+                                                    <input type="text" id="form3Example4" class="form-control" value="${newpass}"  readonly/>
                                                 </div>
                                             </form>
                                         </div>

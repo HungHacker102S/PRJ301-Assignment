@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -48,7 +49,7 @@ public class UserDAO {
         }
         return false;
     }
-    
+
     public User userLogin(String email, String pass) {
         try {
             stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -83,7 +84,22 @@ public class UserDAO {
         }
         return false;
     }
-    
+
+    public boolean checkPhone(String phonenum) {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strSelect = "select * from Account where phonenum='" + phonenum + "'";
+            rs = stm.executeQuery(strSelect);
+            while (rs.next()) {
+                System.out.println("Exist");
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+
     public void signUp(String email, String pass, String firstname, String lastname, String phonenum) {
         try {
             stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -102,11 +118,11 @@ public class UserDAO {
             String strSelect = "select * from Account";
             rs = stm.executeQuery(strSelect);
             while (rs.next()) {
-                String email=rs.getString(2);
-                String pass=rs.getString(3);
-                String firstname=rs.getString(4);
-                String lastname=rs.getString(5);
-                String phonenum=rs.getString(6);
+                String email = rs.getString(2);
+                String pass = rs.getString(3);
+                String firstname = rs.getString(4);
+                String lastname = rs.getString(5);
+                String phonenum = rs.getString(6);
                 int permit = rs.getInt(7);
                 list.add(new User(email, pass, firstname, lastname, phonenum, permit));
             }
@@ -114,5 +130,36 @@ public class UserDAO {
             System.out.println("error:" + e.getMessage());
         }
         return list;
+    }
+
+    public void UpdatePass(String account, char[] newpass) {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strUpdate = "update Account set pass='" + String.valueOf(newpass) + "' where account='" + account + "'";
+            stm.execute(strUpdate);
+            System.out.println("Update pass success!");
+        } catch (Exception e) {
+            System.out.println("error:" + e.getMessage());
+        }
+    }
+    
+    public char[] generatePassword(int length) {
+        String capitalCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+        String specialCharacters = "!@#$";
+        String numbers = "1234567890";
+        String combinedChars = capitalCaseLetters + lowerCaseLetters + specialCharacters + numbers;
+        Random random = new Random();
+        char[] password = new char[length];
+
+        password[0] = lowerCaseLetters.charAt(random.nextInt(lowerCaseLetters.length()));
+        password[1] = capitalCaseLetters.charAt(random.nextInt(capitalCaseLetters.length()));
+        password[2] = specialCharacters.charAt(random.nextInt(specialCharacters.length()));
+        password[3] = numbers.charAt(random.nextInt(numbers.length()));
+
+        for (int i = 4; i < length; i++) {
+            password[i] = combinedChars.charAt(random.nextInt(combinedChars.length()));
+        }
+        return password;
     }
 }
