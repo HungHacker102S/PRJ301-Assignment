@@ -123,7 +123,8 @@
                     <div class="mask">
                         <div class="d-flex justify-content-center align-items-center h-100">
                             <div class="text-white text-center">
-                                <h1 class="mb-3">! SIGN UP FOR BEING OUR FIRST CUSTOMERS !</h1>
+                                <h1 class="mb-3">! SIGN UP FOR BEING OUR FIRST CUSTOMERS HAVE VOUCHERS !</h1>
+                                <h5 class="mb-4"> UwU </h5>
                                 <a class="btn btn-outline-light btn-lg m-2"
                                     href="signup.jsp" rel="nofollow"
                                     role="button">SIGN UP</a>

@@ -209,7 +209,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
                                     <input class="input-qty" name="quantity" type="text" value="1" oninput="checkQuantity()">
                                     <input class="plus is-form" type="button" value="+" onclick="increase()">
                                 </div>
-                                <input type="submit" value="Order Now" id="order" onclick="notAllowToOrder()">
+                                <input type="submit" value="ADD TO CART" id="order" onclick="notAllowToOrder()">
                             </form>
 <!--                            <div id="alert_login">
                                 Vui lòng đăng nhập trước khi đặt hàng
