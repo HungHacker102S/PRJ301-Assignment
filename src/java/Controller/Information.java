@@ -46,8 +46,8 @@ public class Information extends HttpServlet {
                 us.setUserID(user.get(i).getUserID());
                 us.setPhone(user.get(i).getPhone());
                 us.setRole(user.get(i).getRole());
-                request.setAttribute("user", us);
-                response.sendRedirect("information.jsp");
+                session.setAttribute("user", us);
+                request.getRequestDispatcher("information.jsp").forward(request, response);
             }
         }
         request.getRequestDispatcher("home.jsp").forward(request, response);

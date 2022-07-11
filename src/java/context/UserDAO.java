@@ -6,6 +6,7 @@ package context;
 
 import Model.User;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -24,7 +25,8 @@ public class UserDAO {
     Connection cnn; //Kết nối đến dtbs
     Statement stm;  //Thực thi các câu lệnh sql
     ResultSet rs;  //Lưu trữ và xử lý dữ liệu
-
+    PreparedStatement ps;
+    
     private void connectDB() {
         try {
             cnn = (new DBContext()).getConnection();
@@ -138,6 +140,27 @@ public class UserDAO {
             System.out.println("error:" + e.getMessage());
         }
     }
+    
+    public void UpdateInformation(int userid, String email, String pass, String fullname, String phone) {
+        try {
+            String strUpdate =  "update Account \n"
+                                + "set [fullname] = ?,\n"
+                                + "[password] = ?,\n"
+                                + "[phone] = ?,\n"
+                                + "[email] = ?\n"
+                                + "where [userid] = ?";
+            ps = cnn.prepareStatement(strUpdate);
+            ps.setString(1, fullname);
+            ps.setString(2, pass);
+            ps.setString(3, phone);
+            ps.setString(4, email);
+            ps.setInt(5, userid);
+            ps.executeUpdate();
+            System.out.println("Update success!");
+        } catch (Exception e) {
+            System.out.println("error:" + e.getMessage());
+        }
+    } 
 
     public String generatePassword(int length) {
         String capitalCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

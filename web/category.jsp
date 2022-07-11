@@ -66,6 +66,11 @@
                             </c:if>
                             <c:if test="${sessionScope.user!=null}">
                                 <li class="nav-item me-3 me-lg-0">
+                                    <a class="nav-link" href="information.jsp"  style="color: black !important">
+                                        ${sessionScope.user.fullname}
+                                    </a>
+                                </li>
+                                <li class="nav-item me-3 me-lg-0">
                                     <a class="nav-link" href="signout" rel="nofollow">
                                         <span>Logout</span>
                                     </a>

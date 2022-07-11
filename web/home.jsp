@@ -62,7 +62,7 @@
                     <ul class="navbar-nav d-flex flex-row">
                         <c:if test="${sessionScope.user != null}">
                             <li class="nav-item me-3 me-lg-0">
-                                <a class="nav-link" href="information.jsp"  style="color: black !important">
+                                <a class="nav-link" href="information.jsp" rel="nofollow" style="color: black !important">
                                     ${sessionScope.user.fullname}
                                 </a>
                             </li>

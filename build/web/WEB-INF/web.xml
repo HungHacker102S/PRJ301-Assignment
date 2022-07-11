@@ -39,6 +39,10 @@
         <servlet-name>Information</servlet-name>
         <servlet-class>Controller.Information</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditInformation</servlet-name>
+        <servlet-class>Controller.EditInformation</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserDAO</servlet-name>
         <url-pattern>/UserDAO</url-pattern>
@@ -74,6 +78,10 @@
     <servlet-mapping>
         <servlet-name>Information</servlet-name>
         <url-pattern>/information</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditInformation</servlet-name>
+        <url-pattern>/edit</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

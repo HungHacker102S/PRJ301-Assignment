@@ -69,7 +69,7 @@
                         <ul class="navbar-nav d-flex flex-row">
                             <c:if test="${sessionScope.user != null}">
                                 <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="information.jsp"  style="color: black !important">
+                                    <a class="nav-link" href="information.jsp" rel="nofollow" style="color: black !important">
                                         ${sessionScope.user.fullname}
                                     </a>
                                 </li>
@@ -112,37 +112,6 @@
                         <a class="nav-link" href="./#about-us" >About Us</a>
                     </li>
                 </ul>
-
-                <ul class="navbar-nav d-flex flex-row">
-
-                    <c:if test="${sessionScope.user != null}">
-                        <li class="nav-item me-3 me-lg-0">
-                            <a class="nav-link" href="#">
-                                ${sessionScope.user.fullname}
-                            </a>
-                        </li>
-                        <li class="nav-item me-3 me-lg-0">
-                            <a class="nav-link" href="signout" rel="nofollow">
-                                <span>Logout</span>
-                            </a>
-                        </li>
-                    </c:if>
-
-                    <c:if test="${sessionScope.user == null}">
-
-                        <li class="nav-item me-3 me-lg-0">
-                            <a class="nav-link" href="signin.jsp" rel="nofollow">
-                                <span>Login</span>
-                            </a>
-                        </li>
-                        <li class="nav-item me-3 me-lg-0">
-                            <a class="nav-link" href="signup.jsp" rel="nofollow">
-                                <span>Register</span>
-                            </a>
-                        </li>
-                    </c:if>
-
-                </ul>
             </div>
         </div>
     </nav>
@@ -168,6 +137,7 @@
                     <td>${user.getEmail()}</td>
                     <td>${user.getRole()}</td>
                 </tr>
+                <br><a href="editInformation.jsp">Edit</a>
             </table>
         </c:if>
     </div>
