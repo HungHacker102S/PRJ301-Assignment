@@ -1,18 +1,18 @@
 package Model;
 
 public class Product {
+
     int productId;
     String pName;
     int quantity;
     String image;
     double price;
     int cid;
-    
 
     public Product() {
-        
+
     }
-    
+
     public Product(int productId, String pName, int quantity, String image, double price, int cid) {
         this.productId = productId;
         this.pName = pName;
@@ -57,10 +57,10 @@ public class Product {
     public double getPrice() {
         return price;
     }
-    
+
     public String getPrice2() {
         return String.format("%.2f", price);
-    }       
+    }
 
     public void setPrice(double price) {
         this.price = price;
@@ -73,8 +73,5 @@ public class Product {
     public void setCid(int cid) {
         this.cid = cid;
     }
-    
-    
-    
-    
+
 }

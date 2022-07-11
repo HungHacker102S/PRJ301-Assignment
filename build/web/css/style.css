@@ -30,7 +30,7 @@
 /* Height for devices larger than 576px */
 @media (min-width: 992px) {
     #introCarousel {
-        margin-top: -75px;
+        margin-top: -60px;
     }
 
     #introCarousel,

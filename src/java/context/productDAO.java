@@ -10,13 +10,13 @@ import java.util.ArrayList;
  *
  * @author ASUS
  */
-public class productDAO {
+public class ProductDAO {
 
     Connection cnn; //ket noi den DB
     Statement stm; //thuc thi cac cau lenh sql  
     ResultSet rs; //luu tru va xu li du lieu
 
-    public productDAO() {
+    public ProductDAO() {
         connectDB();
     }
 

@@ -16,9 +16,11 @@ create table [Account] (
 userid int identity(1,1) primary key,
 fullname nvarchar(max),
 [password] nvarchar(max),
-phone int,
-email nvarchar(max),
+phone varchar(10),
+[email] nvarchar(64) not null,
 [role] bit,
+
+unique ([email])
 );
 
 create table Category (
