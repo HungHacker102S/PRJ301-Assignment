@@ -75,7 +75,7 @@
                             </c:if>
                             <c:if test="${sessionScope.user!=null}">
                                 <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="signout" rel="nofollow">
+                                    <a class="nav-link" href="Signout" rel="nofollow">
                                         <span>Logout</span>
                                     </a>
                                 </li>

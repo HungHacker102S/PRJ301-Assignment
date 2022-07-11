@@ -35,6 +35,10 @@
         <servlet-name>Forgotpass</servlet-name>
         <servlet-class>Controller.Forgotpass</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Information</servlet-name>
+        <servlet-class>Controller.Information</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserDAO</servlet-name>
         <url-pattern>/UserDAO</url-pattern>
@@ -66,6 +70,10 @@
     <servlet-mapping>
         <servlet-name>Forgotpass</servlet-name>
         <url-pattern>/forgotpass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Information</servlet-name>
+        <url-pattern>/information</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
