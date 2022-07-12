@@ -54,11 +54,13 @@
 
                         <ul class="navbar-nav d-flex flex-row">
                             <c:if test="${sessionScope.user != null}">
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="information.jsp" rel="nofollow" style="color: black !important">
-                                        ${sessionScope.user.fullname}
+                                <c:if test="${sessionScope.user.role==true}">
+                                    <li class="nav-item me-3 me-lg-0">
+                                    <a class="nav-link" href="information" rel="nofollow" style="color: black !important">
+                                        ${sessionScope.user.getFullname()}
                                     </a>
-                                </li>
+                                    </li>
+                                </c:if>
                                 <li class="nav-item me-3 me-lg-0">
                                     <a class="nav-link" href="signout" rel="nofollow" style="color: black !important">
                                         <span>Logout</span>
@@ -87,14 +89,20 @@
         </header>
         <form action="edit" method="post">
             <div>
-                UserID:<input type="text" name="id" value="${user.getUserID()}" readonly>
+                UserID:<input type="text" name="userID" value="${user.getUserID()}" readonly>
                 <br>Fullname:<input type="text" name="fullname" value="${user.getFullname()}">
-                <br>Password:<input type="password" name="password" value="${user.getPassword()}">
+                <br>Password:<input type="text" name="password" value="${user.getPassword()}">
                 <br>Phone:<input type="text" name="phone" value="${user.getPhone()}">
-                <br>Email:<input type="text" name="email" value="${user.getEmail()}">
+                <br>Email:<input type="email" name="email" value="${user.getEmail()}">
                 <br>Role:<input type="text" name="role" value="${user.getRole()}" readonly>
-                <br><button>Submit</button>
+                <br><button type="submit" onclick="showMess()">Update</button>
             </div>
         </form>
     </body>
+    <script>
+        function showMess() {
+            var mess = 'Update successful!';
+            alert(mess);
+        }
+    </script>
 </html>

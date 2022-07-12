@@ -36,12 +36,16 @@
         <servlet-class>Controller.Forgotpass</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>EditInformation</servlet-name>
+        <servlet-class>Controller.EditInformation</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>Information</servlet-name>
         <servlet-class>Controller.Information</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>EditInformation</servlet-name>
-        <servlet-class>Controller.EditInformation</servlet-class>
+        <servlet-name>DeleteUser</servlet-name>
+        <servlet-class>Controller.DeleteUser</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserDAO</servlet-name>
@@ -76,12 +80,16 @@
         <url-pattern>/forgotpass</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>EditInformation</servlet-name>
+        <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>Information</servlet-name>
         <url-pattern>/information</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>EditInformation</servlet-name>
-        <url-pattern>/edit</url-pattern>
+        <servlet-name>DeleteUser</servlet-name>
+        <url-pattern>/delete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

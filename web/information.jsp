@@ -68,11 +68,13 @@
 
                         <ul class="navbar-nav d-flex flex-row">
                             <c:if test="${sessionScope.user != null}">
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="information.jsp" rel="nofollow" style="color: black !important">
-                                        ${sessionScope.user.fullname}
-                                    </a>
-                                </li>
+                                <c:if test="${sessionScope.user.role==true}">
+                                    <li class="nav-item me-3 me-lg-0">
+                                        <a class="nav-link" href="information" rel="nofollow" style="color: black !important">
+                                            ${sessionScope.user.getFullname()}
+                                        </a>
+                                    </li>
+                                </c:if>
                                 <li class="nav-item me-3 me-lg-0">
                                     <a class="nav-link" href="signout" rel="nofollow" style="color: black !important">
                                         <span>Logout</span>
@@ -117,31 +119,41 @@
     </nav>
     <!-- Navbar -->
 </header>
-<form action="information">
+<form>
     <div>
-        <c:if test="${sessionScope.user!=null}">
-            <table>
+        <table>
+            <tr>
+                <td>UserID</td>
+                <td>FullName</td>
+                <td>Password</td>
+                <td>Phone</td>
+                <td>Email</td>
+                <td>Role</td>
+            </tr>
+            <c:forEach items="${list}" var="list">
                 <tr>
-                    <td>UserID</td>
-                    <td>FullName</td>
-                    <td>Password</td>
-                    <td>Phone</td>
-                    <td>Email</td>
-                    <td>Role</td>
+                    <td>${list.getUserID()}</td>
+                    <td>${list.getFullname()}</td>
+                    <td>${list.getPassword()}</td>
+                    <td>${list.getPhone()}</td>
+                    <td>${list.getEmail()}</td>
+                    <td>${list.getRole()}</td>
+                    <td>
+                        <a href="edit?userID=${list.userID}">update</a> 
+                        <a href="#" onclick="deletecf(${list.userID})">delete</a>
+                    </td>
                 </tr>
-                <tr>
-                    <td>${user.getUserID()}</td>
-                    <td>${user.getFullname()}</td>
-                    <td>${user.getPassword()}</td>
-                    <td>${user.getPhone()}</td>
-                    <td>${user.getEmail()}</td>
-                    <td>${user.getRole()}</td>
-                </tr>
-                <br><a href="editInformation.jsp">Edit</a>
-            </table>
-        </c:if>
+            </c:forEach>
+        </table>
     </div>
 </form>
 
 </body>
+<script>
+    function deletecf(id) {
+        var mess = confirm('are you sure to delete');
+        if(mess === true)
+            window.location.href = 'delele?userID=' +id;
+    }
+</script>
 </html>

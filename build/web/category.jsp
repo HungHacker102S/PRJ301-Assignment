@@ -65,11 +65,13 @@
                                 </li>
                             </c:if>
                             <c:if test="${sessionScope.user!=null}">
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="information.jsp"  style="color: black !important">
-                                        ${sessionScope.user.fullname}
-                                    </a>
-                                </li>
+                                <c:if test="${sessionScope.user.role==true}">
+                                    <li class="nav-item me-3 me-lg-0">
+                                        <a class="nav-link" href="information" rel="nofollow" style="color: black !important">
+                                            ${sessionScope.user.getFullname()}
+                                        </a>
+                                    </li>
+                                </c:if>
                                 <li class="nav-item me-3 me-lg-0">
                                     <a class="nav-link" href="signout" rel="nofollow">
                                         <span>Logout</span>

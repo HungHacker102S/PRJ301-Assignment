@@ -117,12 +117,12 @@ public class UserDAO {
             rs = stm.executeQuery(strSelect);
             while (rs.next()) {
                 list.add(new User(
-                        rs.getInt("UserID"),
-                        rs.getNString("Fullname"),
-                        rs.getNString("Password"),
-                        rs.getString("Phone"),
-                        rs.getNString("Email"),
-                        rs.getBoolean("Role")
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getNString(3),
+                        rs.getString(4),
+                        rs.getNString(5),
+                        rs.getBoolean(6)
                 ));
             }
         } catch (Exception e) {
@@ -161,7 +161,41 @@ public class UserDAO {
             System.out.println("error:" + e.getMessage());
         }
     } 
-
+    
+    public void deleteUser(int id) {
+        try {
+            String strUpdate =  "delete from Account \n"
+                                + "where [userid] = ?";
+            ps = cnn.prepareStatement(strUpdate);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            System.out.println("Update success!");
+        } catch (Exception e) {
+            System.out.println("error:" + e.getMessage());
+        }
+    }
+    
+    public User getAccountByID(int id) {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strSelect = "select * from Account where userid='" + id + "'";
+            rs = stm.executeQuery(strSelect);
+            while (rs.next()) {
+                return new User(
+                        rs.getInt("UserID"),
+                        rs.getNString("Fullname"),
+                        rs.getNString("Password"),
+                        rs.getString("Phone"),
+                        rs.getNString("Email"),
+                        rs.getBoolean("Role")
+                );
+            }
+        } catch (Exception e) {
+            System.out.println("Login error:" + e.getMessage());
+        }
+        return null;
+    }
+    
     public String generatePassword(int length) {
         String capitalCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
