@@ -139,8 +139,8 @@
                     <td>${list.getEmail()}</td>
                     <td>${list.getRole()}</td>
                     <td>
-                        <a href="edit?userID=${list.userID}">update</a> 
-                        <a href="#" onclick="deletecf(${list.userID})">delete</a>
+                        <a href="edit?userID=${list.getUserID()}">update</a> 
+                        <a href="#" onclick="deletecf(${list.getUserID()})">delete</a>
                     </td>
                 </tr>
             </c:forEach>
@@ -153,7 +153,7 @@
     function deletecf(id) {
         var mess = confirm('are you sure to delete');
         if(mess === true)
-            window.location.href = 'delele?userID=' +id;
+            window.location.href = 'delete?userID=' +id;
     }
 </script>
 </html>

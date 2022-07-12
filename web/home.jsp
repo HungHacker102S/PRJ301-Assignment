@@ -68,6 +68,13 @@
                                     </a>
                                 </li>
                             </c:if>
+                            <c:if test="${sessionScope.user.role==false}">
+                                <li class="nav-item me-3 me-lg-0">
+                                    <a class="nav-link" href="info" rel="nofollow" style="color: black !important">
+                                        ${sessionScope.user.getFullname()}
+                                    </a>
+                                </li>
+                            </c:if>
                             <li class="nav-item me-3 me-lg-0">
                                 <a class="nav-link" href="signout" rel="nofollow" style="color: black !important">
                                     <span>Logout</span>

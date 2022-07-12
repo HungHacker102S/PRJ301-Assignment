@@ -87,14 +87,14 @@
             </nav>
             <!-- Navbar -->
         </header>
-        <form action="edit" method="post">
+        <form action="editinfo" method="post">
             <div>
                 UserID:<input type="text" name="userID" value="${user.getUserID()}" readonly>
                 <br>Fullname:<input type="text" name="fullname" value="${user.getFullname()}">
                 <br>Password:<input type="text" name="password" value="${user.getPassword()}">
                 <br>Phone:<input type="text" name="phone" value="${user.getPhone()}">
                 <br>Email:<input type="email" name="email" value="${user.getEmail()}">
-                <br>Role:<input type="text" name="role" value="${user.getRole()}">
+                <br>Role:<input type="text" name="role" value="${user.getRole()}" readonly>
                 <br><button type="submit" onclick="showMess()">Update</button>
             </div>
         </form>

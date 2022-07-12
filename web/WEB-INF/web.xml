@@ -47,6 +47,18 @@
         <servlet-name>DeleteUser</servlet-name>
         <servlet-class>Controller.DeleteUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PersionalInfo</servlet-name>
+        <servlet-class>Controller.PersionalInfo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditPersionalInfo</servlet-name>
+        <servlet-class>Controller.EditPersionalInfo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeletePersionalUser</servlet-name>
+        <servlet-class>Controller.DeletePersionalUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserDAO</servlet-name>
         <url-pattern>/UserDAO</url-pattern>
@@ -90,6 +102,18 @@
     <servlet-mapping>
         <servlet-name>DeleteUser</servlet-name>
         <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PersionalInfo</servlet-name>
+        <url-pattern>/info</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditPersionalInfo</servlet-name>
+        <url-pattern>/editinfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletePersionalUser</servlet-name>
+        <url-pattern>/deleteinfo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

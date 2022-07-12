@@ -5,29 +5,26 @@
 
 package Controller;
 
-import Model.User;
 import context.UserDAO;
 import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 
 /**
  *
  * @author MSI Modern 14
  */
-public class Information extends HttpServlet {
-
+public class DeletePersionalUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-       UserDAO user = new UserDAO();
-       ArrayList<User> list = user.getAllUser();
-       request.setAttribute("list", list);
-       request.getRequestDispatcher("information.jsp").forward(request, response);
+        int id = Integer.parseInt(request.getParameter("userID"));
+        UserDAO user = new UserDAO();
+        request.getSession().removeAttribute("user");
+        user.deleteUser(id);
+        request.getRequestDispatcher("signin.jsp").forward(request, response);
     } 
-
-
 }

@@ -57,12 +57,12 @@ public class UserDAO {
             rs = stm.executeQuery(strSelect);
             while (rs.next()) {
                 return new User(
-                        rs.getInt("UserID"),
-                        rs.getNString("Fullname"),
-                        rs.getNString("Password"),
-                        rs.getString("Phone"),
-                        rs.getNString("Email"),
-                        rs.getBoolean("Role")
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getNString(3),
+                        rs.getString(4),
+                        rs.getNString(5),
+                        rs.getBoolean(6)
                 );
             }
         } catch (Exception e) {
@@ -162,6 +162,29 @@ public class UserDAO {
         }
     } 
     
+    public void UpdateInformationAdmin(int userid, String email, String pass, String fullname, String phone, boolean role) {
+        try {
+            String strUpdate =  "update Account \n"
+                                + "set [fullname] = ?,\n"
+                                + "[password] = ?,\n"
+                                + "[phone] = ?,\n"
+                                + "[email] = ?,\n"
+                                + "[role] = ?\n"
+                                + "where [userid] = ?";
+            ps = cnn.prepareStatement(strUpdate);
+            ps.setString(1, fullname);
+            ps.setString(2, pass);
+            ps.setString(3, phone);
+            ps.setString(4, email);
+            ps.setBoolean(5, role);
+            ps.setInt(6, userid);
+            ps.executeUpdate();
+            System.out.println("Update success!");
+        } catch (Exception e) {
+            System.out.println("error:" + e.getMessage());
+        }
+    }
+    
     public void deleteUser(int id) {
         try {
             String strUpdate =  "delete from Account \n"
@@ -182,12 +205,12 @@ public class UserDAO {
             rs = stm.executeQuery(strSelect);
             while (rs.next()) {
                 return new User(
-                        rs.getInt("UserID"),
-                        rs.getNString("Fullname"),
-                        rs.getNString("Password"),
-                        rs.getString("Phone"),
-                        rs.getNString("Email"),
-                        rs.getBoolean("Role")
+                        rs.getInt(1),
+                        rs.getNString(2),
+                        rs.getNString(3),
+                        rs.getString(4),
+                        rs.getNString(5),
+                        rs.getBoolean(6)
                 );
             }
         } catch (Exception e) {

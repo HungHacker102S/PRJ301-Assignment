@@ -94,7 +94,7 @@
                 <br>Password:<input type="text" name="password" value="${user.getPassword()}">
                 <br>Phone:<input type="text" name="phone" value="${user.getPhone()}">
                 <br>Email:<input type="email" name="email" value="${user.getEmail()}">
-                <br>Role:<input type="text" name="role" value="${user.getRole()}" readonly>
+                <br>Role:<input type="text" name="role" value="${user.getRole()}">
                 <br><button type="submit" onclick="showMess()">Update</button>
             </div>
         </form>
