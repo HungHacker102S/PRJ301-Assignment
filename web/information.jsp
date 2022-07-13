@@ -58,11 +58,11 @@
                                 <a class="nav-link" style="color: black !important" aria-current="page" href=".">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" style="color: black !important" href="#category"
+                                <a class="nav-link" style="color: black !important" href="./#category"
                                    rel="nofollow">Category</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" style="color: black !important" href="#about-us" >About Us</a>
+                                <a class="nav-link" style="color: black !important" href="./#about-us" >About Us</a>
                             </li>
                         </ul>
 

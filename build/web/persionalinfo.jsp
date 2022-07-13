@@ -58,11 +58,11 @@
                                 <a class="nav-link" style="color: black !important" aria-current="page" href=".">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" style="color: black !important" href="#category"
+                                <a class="nav-link" style="color: black !important" href="./#category"
                                    rel="nofollow">Category</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" style="color: black !important" href="#about-us" >About Us</a>
+                                <a class="nav-link" style="color: black !important" href="./#about-us" >About Us</a>
                             </li>
                         </ul>
 
@@ -107,58 +107,40 @@
                 </div>
             </nav>
             <!-- Navbar -->
-            <!-- Navbar brand -->
-            <div class="collapse navbar-collapse p-3" id="navbarExample01">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" aria-current="page" href=".">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#category"
-                           rel="nofollow">Category</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./#about-us" >About Us</a>
-                    </li>
-                </ul>
+        </header>
+        <form>
+            <div>
+                <table>
+                    <tr>
+                        <td>UserID</td>
+                        <td>FullName</td>
+                        <td>Password</td>
+                        <td>Phone</td>
+                        <td>Email</td>
+                        <td>Role</td>
+                    </tr>
+                    <tr>
+                        <td>${user.getUserID()}</td>
+                        <td>${user.getFullname()}</td>
+                        <td>${user.getPassword()}</td>
+                        <td>${user.getPhone()}</td>
+                        <td>${user.getEmail()}</td>
+                        <td>${user.getRole()}</td>
+                        <td>
+                            <a href="editinfo?userID=${user.userID}">update</a> 
+                            <a href="#" onclick="deletecf(${user.userID})">delete</a>
+                        </td>
+                    </tr>
+                </table>
             </div>
-        </div>
-    </nav>
-    <!-- Navbar -->
-</header>
-<form>
-    <div>
-        <table>
-            <tr>
-                <td>UserID</td>
-                <td>FullName</td>
-                <td>Password</td>
-                <td>Phone</td>
-                <td>Email</td>
-                <td>Role</td>
-            </tr>
-            <tr>
-                <td>${user.getUserID()}</td>
-                <td>${user.getFullname()}</td>
-                <td>${user.getPassword()}</td>
-                <td>${user.getPhone()}</td>
-                <td>${user.getEmail()}</td>
-                <td>${user.getRole()}</td>
-                <td>
-                    <a href="editinfo?userID=${user.userID}">update</a> 
-                    <a href="#" onclick="deletecf(${user.userID})">delete</a>
-                </td>
-            </tr>
-        </table>
-    </div>
-</form>
+        </form>
 
-</body>
-<script>
-    function deletecf(id) {
-        var mess = confirm('are you sure to delete');
-        if (mess === true)
-            window.location.href = 'deleteinfo?userID=' + id;
-    }
-</script>
+    </body>
+    <script>
+        function deletecf(id) {
+            var mess = confirm('are you sure to delete');
+            if (mess === true)
+                window.location.href = 'deleteinfo?userID=' + id;
+        }
+    </script>
 </html>
