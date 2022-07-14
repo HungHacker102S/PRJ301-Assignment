@@ -33,21 +33,25 @@ public class ProductDAO {
         ArrayList<Product> list = new ArrayList();
         try {
             stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            String strSelect = "Select * from foodstore";
+            String strSelect = "Select * from Product";
+
             rs = stm.executeQuery(strSelect); // executeQuery chi dung cho cau lenh insert
+
             while (rs.next()) {
                 int pId = rs.getInt(1);
                 String pName = rs.getString(2);
                 int pQuantity = rs.getInt(3);
                 String pImage = rs.getString(4);
-                double image = rs.getDouble(5);
+                double price = rs.getDouble(5);
                 int cid = rs.getInt(6);
-                list.add(new Product(pId, pName, pQuantity, pImage, image, cid));
+                list.add(new Product(pId, pName, pQuantity, pImage, price, cid));
             }
+
+            return list;
         } catch (Exception e) {
             System.out.println("checkAccount error: " + e.getMessage());
         }
-        return list;
+        return null;
     }
 
     public ArrayList<Product> getProductByCategory(String category) {
@@ -96,4 +100,12 @@ public class ProductDAO {
         return null;
     }
 
+    public void updateQuantityByProductId(int id, int quantity) {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            stm.execute("UPDATE Product SET quantity = " +  quantity + " WHERE productid = " + id);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
 }

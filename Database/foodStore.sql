@@ -23,7 +23,7 @@ phone varchar(10),
 unique ([email])
 );
 
-create table Category (
+create table Category(
 cid int primary key,
 cName nvarchar(max),
 
@@ -43,7 +43,6 @@ foreign key (cid) references [Category](cid) on delete cascade
 create table Bill (
 billid int identity(1,1) primary key,
 userid int,
-productid int,
 bPrice real,
 
 foreign key (userid) references [Account](userid) on delete cascade,
@@ -52,12 +51,24 @@ foreign key (userid) references [Account](userid) on delete cascade,
 create table orders (
 oderid int identity(1,1) primary key,
 productid int,
-billid int, 
+billid int,
 [oPrice] real,
+oQuantity int,
 
 foreign key (billid) references [Bill](billid) on delete cascade,
 foreign key (productid) references [Product](productid) on delete cascade,
 );
+
+create table cart(
+userid int,
+productid int,
+quantity int,
+
+foreign key (userid) references [Account](userid) on delete cascade,
+foreign key (productid) references [Product](productid) on delete cascade,
+);
+
+
 
 
 

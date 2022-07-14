@@ -28,31 +28,17 @@
             }
         </style>
 
+
     </head>
     <body>
         <%@include file="header.jsp" %>
 
-        <div class="container mt-3 item">
-            <section class="text-center">
-                <div class="row">
-                    <c:forEach items="${c}" var="x">
-                        <div class="col-sm-4 p-3">
-                            <div class="btn btn-block">
-                                <img class="img-fluid rounded" style="height:300px" src="${x.getImage()}"/><br>
+        <main>
+            <div style="text-align: center; color: #FF5685">
+                <h1>Order Successfully ! </h1>
+            </div>
 
-                                <p class="text-center text-uppercase mt-3" style="font-size: 15px">${x.getpName()}</p>
-
-                                <p style="text-align: center; font-size: 13px">
-                                    Price: <span style="font-size: 13px">${x.getPrice2()}$</span></p>
-                                <p style="text-align: center; font-size: 13px">
-                                    Quantity: <span style="font-size: 13px">${x.getQuantity()}</span></p>
-                                <a href="payment?pid=${x.getProductId()}" class="btn btn-primary">CLICK TO ORDER</a>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
-            </section>
-        </div>
+        </main>
 
         <!--Footer-->
         <footer class="bg-light text-lg-start">
@@ -80,7 +66,7 @@
 
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: #fff;">
-                © 2020 Copyright:
+                © 2022 Copyright:
                 <a class="text-dark" >TeamThieuNang.com</a>
             </div>
             <!-- Copyright -->

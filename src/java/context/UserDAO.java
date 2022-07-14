@@ -82,7 +82,7 @@ public class UserDAO {
         }
         return false;
     }
-   
+
     public boolean checkEmailAndPhone(String email, String phone) {
         try {
             stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);

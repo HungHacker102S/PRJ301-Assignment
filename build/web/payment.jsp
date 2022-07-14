@@ -106,17 +106,6 @@
                 margin:0;
             }
 
-            #order{
-                background-color: red;
-                border: none;
-                color: white;
-                border-radius: 20px;
-                font-size: 20px;
-                margin-left: 10px;
-                padding: 5px 30px;
-                font-weight: bold;
-            }
-
             #alert_choose_size{
                 color: #fff;
                 display: inline-block;
@@ -141,60 +130,7 @@
 
     </head>
     <body>
-        <header>
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" style="z-index: 2000;">
-                <div class="container-fluid">
-                    <!-- Navbar brand -->
-                    <a class="navbar-brand nav-link" href=".">
-                        <img src="images/logo.svg" width="50" class="rounded-circle" alt="alt"/>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-                            data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarExample01">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item active">
-                                <a class="nav-link" aria-current="page" href=".">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./#category" rel="nofollow">Category</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./#about-us">About Us</a>
-                            </li>
-                        </ul>
-
-                        <ul class="navbar-nav d-flex flex-row">
-                            <c:if test="${sessionScope.user==null}">
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="signin.jsp" rel="nofollow">
-                                        <span>Login</span>
-                                    </a>
-                                </li>
-                            </c:if>
-                            <c:if test="${sessionScope.user!=null}">
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="#">
-                                        ${sessionScope.user.fullname}
-                                    </a>
-                                </li>
-                            </c:if>
-                            <c:if test="${sessionScope.user!=null}">
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="signout" rel="nofollow">
-                                        <span>Logout</span>
-                                    </a>
-                                </li>
-                            </c:if>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- Navbar -->
-        </header>
+        <%@include file="header.jsp" %>
 
         <div class="container pt-5">
             <div class="row">
@@ -213,15 +149,15 @@
                         </div>
                     </div>
 
-                    <form class="mt-3 mb-3">                                
+
+                    <form action="cart" method="post" class="mt-3 mb-3">  
+                        <input type="hidden" name="productid" value="${product.getProductId()}">
                         <div class="choose_quantity mb-3 d-flex align-items-center">
-                            <span style="font-weight: bold">Quantity:</span>
-                            <input class="minus is-form" type="button" value="-" onclick="decrease()">
-                            <input class="input-qty" name="quantity" type="text" value="1" oninput="checkQuantity()">
-                            <input class="plus is-form" type="button" value="+" onclick="increase()">
+                            <span style="font-weight: bold" class="me-1">Quantity:</span>
+                            <input type="number" value="1" name="quantity" min="0" max="${product.getQuantity() - cart.getQuantity()}">
                         </div>
-                        
-                        <input type="submit" value="ADD TO CART" id="order" onclick="notAllowToOrder()">
+
+                        <input type="submit" value="ADD TO CART" class="btn btn-danger btn-delete-sanpham" onclick="" >
                     </form>
                     <!--                            <div id="alert_login">
                                                     Vui lòng đăng nhập trước khi đặt hàng
@@ -248,8 +184,8 @@
                     target="_blank">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a  class="btn btn-primary m-1" role="button"
-                    rel="nofollow" target="_blank">
+                <a class="btn btn-primary m-1" role="button"
+                   rel="nofollow" target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
@@ -266,7 +202,12 @@
 </body>
 
 <!-- MDB -->
+
+
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
 <script src="https://kit.fontawesome.com/150675defe.js" crossorigin="anonymous"></script>
 
 </html>
+
+
