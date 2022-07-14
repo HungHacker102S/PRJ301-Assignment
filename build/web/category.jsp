@@ -32,27 +32,24 @@
     <body>
         <%@include file="header.jsp" %>
 
-        <div class="container mt-3 item">
+        <div class="item">
             <section class="text-center">
                 <div class="row">
                     <c:forEach items="${c}" var="x">
-                        <div class="col-sm-4 p-3">
-                            <div class="btn btn-block">
-                                <img class="img-fluid rounded" style="height:300px" src="${x.getImage()}"/><br>
-
-                                <p class="text-center text-uppercase mt-3" style="font-size: 15px">${x.getpName()}</p>
-
-                                <p style="text-align: center; font-size: 13px">
-                                    Price: <span style="font-size: 13px">${x.getPrice2()}$</span></p>
-                                <p style="text-align: center; font-size: 13px">
-                                    Quantity: <span style="font-size: 13px">${x.getQuantity()}</span></p>
-                                <a href="payment?pid=${x.getProductId()}" class="btn btn-primary">CLICK TO ORDER</a>
-                            </div>
+                        <div class="col-sm-4" style="border:1px pink solid">
+                            <img class="img-responsive img-fluid" style="height:300px" src="${x.getImage()}"/><br>
+                            <p style="text-align: center; text-transform: uppercase; font-size: 15px">${x.getpName()}</p>
+                            <p style="text-align: center; font-size: 14px">
+                                Price: <span style="font-size: 20px">${x.getPrice2()}$</span></p>
+                            <p style="text-align: center; font-size: 14px">
+                                Quantity: <span style="font-size: 20px">${x.getQuantity()}</span></p>
+                            <a href="payment?pid=${x.getProductId()}" class="btn btn-primary">CLICK TO ORDER</a>
                         </div>
                     </c:forEach>
                 </div>
             </section>
         </div>
+
 
         <!--Footer-->
         <footer class="bg-light text-lg-start">

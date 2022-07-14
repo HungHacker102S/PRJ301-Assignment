@@ -64,8 +64,7 @@ public class CartDAO {
         }
         return null;
     }
-    
-    
+
     public void removeAllCartsByUserId(int userId) {
         try {
             stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);

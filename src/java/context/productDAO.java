@@ -103,7 +103,7 @@ public class ProductDAO {
     public void updateQuantityByProductId(int id, int quantity) {
         try {
             stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            stm.execute("UPDATE Product SET quantity = " +  quantity + " WHERE productid = " + id);
+            stm.execute("UPDATE Product SET quantity = " + quantity + " WHERE productid = " + id);
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }

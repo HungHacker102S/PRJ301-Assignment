@@ -28,13 +28,13 @@ public class CartServlet extends HttpServlet {
         ProductDAO pd = new ProductDAO();
 
         List<Cart> carts = cd.getCartsByUserId(u.getUserID());
-        
+
         double bill = 0;
-        
+
         for (Cart cart : carts) {
             bill += cart.getQuantity() * pd.getProductByProductId("" + cart.getProductId()).getPrice();
         }
-        
+
         request.setAttribute("productList", pd.getAll());
         request.setAttribute("carts", carts);
         request.setAttribute("bill", bill);

@@ -87,12 +87,12 @@
 
                         <div class="d-flex">
                             <a href="." class="btn btn-warning m-2"><i class="fa fa-arrow-left"
-                                                                          aria-hidden="true"></i>Go Home</a>
+                                                                       aria-hidden="true"></i>Go Home</a>
                             <a href="checkout" class="btn btn-primary m-2">
                                 <i class="fa fa-shopping-cart m-0"></i>
                                 Order
                             </a>
-                                    
+
                             <div class="d-flex flex-row-reverse align-items-center flex-fill">
                                 <h3 class="m-0">Your Bill: <strong class="text-danger">${bill}$</strong></h3>
                             </div>

@@ -31,16 +31,18 @@ public class CheckoutServlet extends HttpServlet {
 
         for (Cart cart : carts) {
             Product p = pd.getProductByProductId("" + cart.getProductId());
-            
-            if (p.getQuantity() < cart.getQuantity()) continue;
-            
+
+            if (p.getQuantity() < cart.getQuantity()) {
+                continue;
+            }
+
             p.setQuantity(p.getQuantity() - cart.getQuantity());
-            
+
             pd.updateQuantityByProductId(p.getProductId(), p.getQuantity());
         }
 
         cd.removeAllCartsByUserId(u.getUserID());
-        
+
         request.getRequestDispatcher("checkout.jsp").forward(request, response);
     }
 }
