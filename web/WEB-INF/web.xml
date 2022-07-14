@@ -43,6 +43,34 @@
         <servlet-name>CheckoutServlet</servlet-name>
         <servlet-class>Controller.CheckoutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditInformation</servlet-name>
+        <servlet-class>Controller.EditInformation</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Information</servlet-name>
+        <servlet-class>Controller.Information</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteUser</servlet-name>
+        <servlet-class>Controller.DeleteUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PersionalInfo</servlet-name>
+        <servlet-class>Controller.PersionalInfo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditPersionalInfo</servlet-name>
+        <servlet-class>Controller.EditPersionalInfo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeletePersionalUser</servlet-name>
+        <servlet-class>Controller.DeletePersionalUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchController</servlet-name>
+        <servlet-class>Controller.SearchController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserDAO</servlet-name>
         <url-pattern>/UserDAO</url-pattern>
@@ -82,6 +110,34 @@
     <servlet-mapping>
         <servlet-name>CheckoutServlet</servlet-name>
         <url-pattern>/checkout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditInformation</servlet-name>
+        <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Information</servlet-name>
+        <url-pattern>/information</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteUser</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PersionalInfo</servlet-name>
+        <url-pattern>/info</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditPersionalInfo</servlet-name>
+        <url-pattern>/editinfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletePersionalUser</servlet-name>
+        <url-pattern>/deleteinfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchController</servlet-name>
+        <url-pattern>/SearchController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

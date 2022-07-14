@@ -34,11 +34,12 @@ public class Signup extends HttpServlet {
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
         String phonenum = request.getParameter("phonenum");
+        String address = request.getParameter("address");
         UserDAO user = new UserDAO();
         if (user.checkEmail(email) || email == null || pass == null) {
             response.sendRedirect("signup.jsp");
         } else {
-            user.signUp(email, pass, firstname + " " + lastname, phonenum);
+            user.signUp(email, pass, firstname + " " + lastname, phonenum, address);
             request.getRequestDispatcher("signin.jsp").forward(request, response);
         }
     }

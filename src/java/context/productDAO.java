@@ -99,6 +99,41 @@ public class ProductDAO {
         }
         return null;
     }
+    
+    public ArrayList<Product> getByPage(ArrayList<Product> listAll, int start, int end) {
+        ArrayList<Product> list=new ArrayList<Product>();
+        
+        for(int i=start;i<end;i++){
+            list.add(listAll.get(i));
+        }
+        return list;
+    }
+    
+    
+    public ArrayList<Product> getByName(ArrayList<Product> listAll, String name){
+        ArrayList<Product> list=new ArrayList<Product>();
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strSelect = "SELECT * FROM Product WHERE pName LIKE '%" + name + "%'";
+
+            rs = stm.executeQuery(strSelect);
+            while (rs.next()) {
+                int pId = rs.getInt(1);
+                String pName = rs.getString(2);
+                int pQuantity = rs.getInt(3);
+                String pImage = rs.getString(4);
+                double image = rs.getDouble(5);
+                int cid = rs.getInt(6);
+
+                list.add(new Product(pId, pName, pQuantity, pImage, image, cid));
+                
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }       
+        return list;
+        
+    }
 
     public void updateQuantityByProductId(int id, int quantity) {
         try {
