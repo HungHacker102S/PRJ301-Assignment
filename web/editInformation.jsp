@@ -95,6 +95,7 @@
                 <br>Phone:<input type="text" name="phone" value="${user.getPhone()}">
                 <br>Email:<input type="email" name="email" value="${user.getEmail()}">
                 <br>Role:<input type="text" name="role" value="${user.getRole()}">
+                <br>Address:<input type="text" name="address" value="${user.getAddress()}">
                 <br><button type="submit" onclick="showMess()">Update</button>
             </div>
         </form>

@@ -118,6 +118,7 @@
                         <td>Phone</td>
                         <td>Email</td>
                         <td>Role</td>
+                        <td>Address</td>
                     </tr>
                     <tr>
                         <td>${user.getUserID()}</td>
@@ -126,6 +127,7 @@
                         <td>${user.getPhone()}</td>
                         <td>${user.getEmail()}</td>
                         <td>${user.getRole()}</td>
+                        <td>${user.getAddress()}</td>
                         <td>
                             <a href="editinfo?userID=${user.userID}">update</a> 
                             <a href="#" onclick="deletecf(${user.userID})">delete</a>

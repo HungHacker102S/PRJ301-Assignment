@@ -137,7 +137,10 @@
                                             <input type="email" name="email" value="${email}" id="form3Example3" class="form-control" required/>
                                             <label class="form-label" for="form3Example3">Email address</label>
                                         </div>
-
+                                        <div class="form-outline mb-4">
+                                            <input type="text" name="address" value="${address}" id="form3Example3" class="form-control" required/>
+                                            <label class="form-label" for="form3Example3">Address</label>
+                                        </div>
                                         <!-- Password input -->
                                         <div class="form-outline mb-4">
                                             <input type="text" name="phonenum" id="form3Example4" class="form-control" required/>

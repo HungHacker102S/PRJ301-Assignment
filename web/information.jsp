@@ -129,6 +129,7 @@
                 <td>Phone</td>
                 <td>Email</td>
                 <td>Role</td>
+                <td>Address</td>
             </tr>
             <c:forEach items="${list}" var="list">
                 <tr>
@@ -138,6 +139,7 @@
                     <td>${list.getPhone()}</td>
                     <td>${list.getEmail()}</td>
                     <td>${list.getRole()}</td>
+                    <td>${list.getAddress()}</td>
                     <td>
                         <a href="edit?userID=${list.getUserID()}">update</a> 
                         <a href="#" onclick="deletecf(${list.getUserID()})">delete</a>

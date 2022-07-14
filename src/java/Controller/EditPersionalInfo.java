@@ -36,8 +36,9 @@ public class EditPersionalInfo extends HttpServlet {
         String phone = request.getParameter("phone");
         String pass = request.getParameter("password");
         String email = request.getParameter("email");
+        String address = request.getParameter("address");
         UserDAO user = new UserDAO();                                             
-        user.UpdateInformation(userid, email, pass, name, phone);
+        user.UpdateInformation(userid, email, pass, name, phone, address);
         User us = user.userLogin(email, pass);
         request.getSession().setAttribute("user", us);
         response.sendRedirect("info");

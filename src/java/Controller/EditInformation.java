@@ -38,8 +38,9 @@ public class EditInformation extends HttpServlet {
         String pass = request.getParameter("password");
         String email = request.getParameter("email");
         boolean role = Boolean.parseBoolean(request.getParameter("role"));
+        String address = request.getParameter("address");
         UserDAO user = new UserDAO();                                             
-        user.UpdateInformationAdmin(userid, email, pass, name, phone, role);
+        user.UpdateInformationAdmin(userid, email, pass, name, phone, role, address);
         response.sendRedirect("information");
     }
 

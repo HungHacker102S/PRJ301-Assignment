@@ -16,7 +16,16 @@ public class User {
     private String phone;
     private String email;
     private Boolean role;
+    private String address;
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
     public Integer getUserID() {
         return userID;
     }
@@ -68,12 +77,13 @@ public class User {
     public User() {
     }
 
-    public User(Integer userID, String fullname, String password, String phone, String email, Boolean role) {
+    public User(Integer userID, String fullname, String password, String phone, String email, Boolean role, String address) {
         this.userID = userID;
         this.fullname = fullname;
         this.password = password;
         this.phone = phone;
         this.email = email;
         this.role = role;
+        this.address = address;
     }
 }
