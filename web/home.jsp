@@ -57,6 +57,15 @@
                         <li class="nav-item">
                             <a class="nav-link" style="color: black !important" href="#about-us" >About Us</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: black !important" href="#find-product">Find Product: </a>
+                        </li>
+                        <li class="nav-item">
+                            <form action="SearchController">
+                                    <input type="text" name="find" >
+                                    <input type="submit">
+                                </form>
+                        </li>
                     </ul>
 
                     <ul class="navbar-nav d-flex flex-row">

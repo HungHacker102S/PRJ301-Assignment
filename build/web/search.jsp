@@ -59,7 +59,7 @@
                             </li>
                             <li class="nav-item">
                                 <form>
-                                    <input type="text" name="find">
+                                    <input type="text" name="find" value="${find}">
                                     <input type="submit">
                                 </form>
                             </li>
@@ -74,13 +74,6 @@
                                 </li>
                             </c:if>
                             <c:if test="${sessionScope.user!=null}">
-                                <c:if test="${sessionScope.user.role==true}">
-                                    <li class="nav-item me-3 me-lg-0">
-                                        <a class="nav-link" href="information" rel="nofollow" style="color: black !important">
-                                            ${sessionScope.user.getFullname()}
-                                        </a>
-                                    </li>
-                                </c:if>
                                 <li class="nav-item me-3 me-lg-0">
                                     <a class="nav-link" href="signout" rel="nofollow">
                                         <span>Logout</span>
@@ -101,11 +94,15 @@
 
         <div class="container mt-3 item">
             <section class="text-center">
+                
                 <div class="row">
+                    <div class="text-center">
+                        ${notifi}
+                    </div>              
                     <div class="column">
                     <c:set value="${page}" var="age"></c:set>
                     <c:forEach begin="${1}" end="${numpage}" var="item">
-                         <a href="category?xpage=${item}&category=${category}">${item}</a>     
+                                <a href="SearchController?xpage=${item}&find=${find}">${item}</a>     
                      </c:forEach>
                     </div>
                     <c:forEach items="${listpg}" var="x">
@@ -124,6 +121,7 @@
                         </div>
                     </c:forEach>
                 </div>
+           
             </section>
         </div>
 

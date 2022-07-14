@@ -54,6 +54,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="./#about-us">About Us</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./#find-product">Find Product</a>
+                            </li>
+                            <li class="nav-item">
+                                <form>
+                                    <input type="text" name="find">
+                                    <input type="submit">
+                                </form>
+                            </li>
                         </ul>
 
                         <ul class="navbar-nav d-flex flex-row">
@@ -93,7 +102,13 @@
         <div class="container mt-3 item">
             <section class="text-center">
                 <div class="row">
-                    <c:forEach items="${c}" var="x">
+                    <div class="column">
+                    <c:set value="${page}" var="age"></c:set>
+                    <c:forEach begin="${1}" end="${numpage}" var="item">
+                         <a href="category?xpage=${item}&category=${category}">${item}</a>     
+                     </c:forEach>
+                    </div>
+                    <c:forEach items="${listpg}" var="x">
                         <div class="col-sm-4 p-3">
                             <div class="btn btn-block">
                                 <img class="img-fluid rounded" style="height:300px" src="${x.getImage()}"/><br>

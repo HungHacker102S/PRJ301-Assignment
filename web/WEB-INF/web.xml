@@ -59,6 +59,10 @@
         <servlet-name>DeletePersionalUser</servlet-name>
         <servlet-class>Controller.DeletePersionalUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchController</servlet-name>
+        <servlet-class>Controller.SearchController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserDAO</servlet-name>
         <url-pattern>/UserDAO</url-pattern>
@@ -114,6 +118,10 @@
     <servlet-mapping>
         <servlet-name>DeletePersionalUser</servlet-name>
         <url-pattern>/deleteinfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchController</servlet-name>
+        <url-pattern>/SearchController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

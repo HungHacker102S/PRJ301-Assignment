@@ -17,7 +17,7 @@ public class DBContext {
     /*Insert your other code right after this comment*/
    
     /*Change/update information of your database connection, DO NOT change name of instance variables in this class*/
-    private final String serverName = "Hpine";
+    private final String serverName = "NIGHTSHADOW";
     private final String dbName = "foodstore";
     private final String portNumber = "1433";
     private final String userID = "sa";
