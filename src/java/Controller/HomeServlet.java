@@ -29,6 +29,11 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        if (request.getSession().getAttribute("user") == null)  {
+            response.sendError(404);
+            return;
+        }
+        
         request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 
