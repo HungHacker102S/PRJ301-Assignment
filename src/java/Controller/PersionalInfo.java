@@ -20,6 +20,14 @@ public class PersionalInfo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        User u = (User) request.getSession().getAttribute("user");
+        
+        if (u == null) {
+            response.sendRedirect(".");
+            return;
+        }
+        
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
         UserDAO user = new UserDAO();

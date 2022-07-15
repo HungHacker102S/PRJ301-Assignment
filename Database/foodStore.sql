@@ -19,6 +19,7 @@ fullname nvarchar(max),
 phone varchar(10),
 [email] nvarchar(64) not null,
 [role] bit,
+[address] nvarchar(max),
 
 unique ([email])
 );

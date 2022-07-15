@@ -21,6 +21,13 @@ public class EditInformation extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        User u = (User) request.getSession().getAttribute("user");
+        
+        if (!u.getRole()) {
+            response.sendRedirect(".");
+            return;
+        }
+        
         String role = request.getParameter("role");
         int id = Integer.parseInt(request.getParameter("userID"));
         UserDAO user = new UserDAO();
@@ -32,6 +39,13 @@ public class EditInformation extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        User u = (User) request.getSession().getAttribute("user");
+        
+        if (!u.getRole()) {
+            response.sendRedirect(".");
+            return;
+        }
+        
         int userid = Integer.parseInt(request.getParameter("userID"));
         String name = request.getParameter("fullname");
         String phone = request.getParameter("phone");

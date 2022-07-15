@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-
 package Controller;
 
 import Model.User;
@@ -22,12 +21,17 @@ public class Information extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-       UserDAO user = new UserDAO();
-       ArrayList<User> list = user.getAllUser();
-       request.setAttribute("list", list);
-       request.getRequestDispatcher("information.jsp").forward(request, response);
-    } 
+            throws ServletException, IOException {
+        User u = (User) request.getSession().getAttribute("user");
 
+        if (!u.getRole()) {
+            response.sendRedirect(".");
+            return;
+        }
 
+        UserDAO user = new UserDAO();
+        ArrayList<User> list = user.getAllUser();
+        request.setAttribute("list", list);
+        request.getRequestDispatcher("information.jsp").forward(request, response);
+    }
 }

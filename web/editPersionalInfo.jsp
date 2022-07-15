@@ -22,83 +22,36 @@
     <link rel="stylesheet" href="css/style.css">
     <!--logo-->
     <body>
-        <header>
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
-                <div class="container-fluid">
-
-                    <!-- Navbar brand -->
-                    <a class="navbar-brand nav-link" href=".">                   
-                        <img src="images/logo.svg" width="50" class="rounded-circle" alt="alt"/>                 
-                    </a>
-
-                    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-                            data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarExample01">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item active">
-                                <a class="nav-link" style="color: black !important" aria-current="page" href=".">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" style="color: black !important" href="./#category"
-                                   rel="nofollow">Category</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" style="color: black !important" href="./#about-us" >About Us</a>
-                            </li>
-                        </ul>
-
-                        <ul class="navbar-nav d-flex flex-row">
-                            <c:if test="${sessionScope.user != null}">
-                                <c:if test="${sessionScope.user.role==true}">
-                                    <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="information" rel="nofollow" style="color: black !important">
-                                        ${sessionScope.user.getFullname()}
-                                    </a>
-                                    </li>
-                                </c:if>
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="signout" rel="nofollow" style="color: black !important">
-                                        <span>Logout</span>
-                                    </a>
-                                </li>
-                            </c:if>
-
-                            <c:if test="${sessionScope.user == null}">
-
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="signin.jsp" rel="nofollow" style="color: black !important">
-                                        <span>Login</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="signup.jsp" rel="nofollow" style="color: black !important">
-                                        <span>Register</span>
-                                    </a>
-                                </li>
-                            </c:if>
-                        </ul>
+        <%@include file="header.jsp" %>
+        <form method="post">
+            <div class="container p-3">
+                    <div class="form-floating mb-3">
+                        <input type="text" name="userID" value="${user.getUserID()}" class="form-control" readonly>
+                        <label class="form-label">UserID</label>
                     </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" name="fullname" value="${user.getFullname()}" class="form-control">
+                        <label class="form-label">Fullname</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" name="password" value="${user.getPassword()}" class="form-control">
+                        <label class="form-label">Password</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" name="phone" value="${user.getPhone()}" class="form-control">
+                        <label class="form-label">Phone</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" value="${user.getEmail()}" class="form-control">
+                        <label class="form-label">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" name="address" value="${user.getAddress()}" class="form-control">
+                        <label class="form-label">Address</label>
+                    </div>
+                    <button type="submit" onclick="showMess()" class="btn btn-primary">Update</button>
                 </div>
-            </nav>
-            <!-- Navbar -->
-        </header>
-        <form action="editinfo" method="post">
-            <div>
-                UserID:<input type="text" name="userID" value="${user.getUserID()}" readonly>
-                <br>Fullname:<input type="text" name="fullname" value="${user.getFullname()}">
-                <br>Password:<input type="text" name="password" value="${user.getPassword()}">
-                <br>Phone:<input type="text" name="phone" value="${user.getPhone()}">
-                <br>Email:<input type="email" name="email" value="${user.getEmail()}">
-                <br>Role:<input type="text" name="role" value="${user.getRole()}" readonly>
-                <br>Address:<input type="text" name="address" value="${user.getAddress()}">
-                <br><button type="submit" onclick="showMess()">Update</button>
-            </div>
-        </form>
+            </form>
     </body>
     <script>
         function showMess() {

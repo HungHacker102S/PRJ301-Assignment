@@ -45,7 +45,7 @@
                         </li>
 
                         <li class="nav-item me-3 me-lg-0">
-                            <a class="nav-link" href="#"  style="color: black !important">
+                            <a class="nav-link" href="info<c:if test="${sessionScope.user.getRole()}">rmation</c:if>"  style="color: black !important">
                                 ${sessionScope.user.fullname}
                             </a>
                         </li>
@@ -106,7 +106,7 @@
 
             <c:if test="${sessionScope.user != null}">
                 <li class="nav-item me-3 me-lg-0">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="info<c:if test="${sessionScope.user.getRole()}">rmation</c:if>">
                         ${sessionScope.user.fullname}
                     </a>
                 </li>

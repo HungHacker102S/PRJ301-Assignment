@@ -41,6 +41,7 @@ public class CartServlet extends HttpServlet {
         request.getRequestDispatcher("cart.jsp").forward(request, response);
     }
 
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -59,6 +60,7 @@ public class CartServlet extends HttpServlet {
                 return;
             }
 
+            
             cd.addCart(u.getUserID(), productId, quantity);
         } catch (Exception e) {
             e.printStackTrace();

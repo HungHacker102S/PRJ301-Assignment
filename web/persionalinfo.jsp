@@ -22,17 +22,6 @@
         <link rel="stylesheet" href="css/style.css">
         <!--logo-->
         <link rel="icon" href="images/logo.svg">
-        <style>
-            .navbar-light .nav-link {
-                color: black !important;
-            }
-            table,td {
-                border: solid black;
-            }
-            table{
-                border-collapse:collapse;
-            }
-        </style>
 
     </head>
     <body>
@@ -109,18 +98,22 @@
             <!-- Navbar -->
         </header>
         <form>
-            <div>
-                <table>
-                    <tr>
-                        <td>UserID</td>
-                        <td>FullName</td>
-                        <td>Password</td>
-                        <td>Phone</td>
-                        <td>Email</td>
-                        <td>Role</td>
-                        <td>Address</td>
+            <div class="container p-3">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                        <th>UserID</th>
+                        <th>FullName</th>
+                        <th>Password</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Address</th>
+                        <th>Action</th>
                     </tr>
-                    <tr>
+                    </thead>
+                    <tbody>
+                        <tr>
                         <td>${user.getUserID()}</td>
                         <td>${user.getFullname()}</td>
                         <td>${user.getPassword()}</td>
@@ -129,10 +122,15 @@
                         <td>${user.getRole()}</td>
                         <td>${user.getAddress()}</td>
                         <td>
-                            <a href="editinfo?userID=${user.userID}">update</a> 
-                            <a href="#" onclick="deletecf(${user.userID})">delete</a>
+                            <a href="editinfo?userID=${user.userID}" class="btn btn-primary">
+                                <i class="fa-solid fa-pen"></i>
+                            </a> 
+                            <a href="#" onclick="deletecf(${user.userID})" class="btn btn-danger">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
                         </td>
                     </tr>
+                    </tbody>
                 </table>
             </div>
         </form>

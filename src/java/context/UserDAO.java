@@ -104,7 +104,7 @@ public class UserDAO {
     public void signUp(String email, String pass, String fullname, String phonenum, String address) {
         try {
             stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            String strUpdate = "insert into Account (fullname, password, phone, email, role, address) values ('" + fullname + "','" + pass + "','" + phonenum + "','" + email + "', 0, '" + address + "');";
+            String strUpdate = "insert into Account (fullname, password, phone, email, role, address) values (N'" + fullname + "',N'" + pass + "','" + phonenum + "',N'" + email + "', 0, N'" + address + "');";
             stm.executeUpdate(strUpdate);
         } catch (Exception e) {
             System.out.println("error:" + e.getMessage());

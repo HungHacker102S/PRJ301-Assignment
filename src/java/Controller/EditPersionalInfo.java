@@ -22,6 +22,13 @@ public class EditPersionalInfo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        User u = (User) request.getSession().getAttribute("user");
+        
+        if (u == null) {
+            response.sendRedirect(".");
+            return;
+        }
+        
         int id = Integer.parseInt(request.getParameter("userID"));
         UserDAO user = new UserDAO();
         request.setAttribute("user", user.getAccountByID(id));
@@ -31,6 +38,13 @@ public class EditPersionalInfo extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        User u = (User) request.getSession().getAttribute("user");
+        
+        if (u == null) {
+            response.sendRedirect(".");
+            return;
+        }
+        
         int userid = Integer.parseInt(request.getParameter("userID"));
         String name = request.getParameter("fullname");
         String phone = request.getParameter("phone");
