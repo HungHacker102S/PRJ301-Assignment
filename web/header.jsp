@@ -4,6 +4,7 @@
     Author     : ASUS
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <header>
@@ -45,7 +46,7 @@
                         </li>
 
                         <li class="nav-item me-3 me-lg-0">
-                            <a class="nav-link" href="#"  style="color: black !important">
+                            <a class="nav-link" href="information"  style="color: black !important">
                                 ${sessionScope.user.fullname}
                             </a>
                         </li>
