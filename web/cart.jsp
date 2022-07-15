@@ -73,7 +73,7 @@
                                                     <td class="text-right">${p.getPrice()*carts.get(i).getQuantity()}</td>
                                                     <td>
                                                         <!-- Nút xóa, bấm vào sẽ xóa thông tin dựa vào khóa chính `sp_ma` -->
-                                                        <a id="delete_1" data-sp-ma="2" class="btn btn-danger btn-delete-sanpham">
+                                                        <a id="delete_1" data-sp-ma="2" class="btn btn-danger btn-delete-sanpham" href="cart?userid=${userid}&remove=1&productid=${productid}">
                                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                                         </a>
                                                     </td>

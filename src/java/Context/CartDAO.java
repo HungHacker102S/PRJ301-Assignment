@@ -73,4 +73,66 @@ public class CartDAO {
             System.err.println(e.getMessage());
         }
     }
+    
+    public int getProductID(int userid){
+        int product_id=0;
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            rs=stm.executeQuery("SELECT*FROM cart WHERE userid = " + userid);
+            while(rs.next()){
+                product_id=rs.getInt(2);
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+        return product_id;
+    }
+    
+    public String getP_by_PID(int productID){
+        String product="";
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            rs=stm.executeQuery("SELECT*FROM Product WHERE productid = " + productID);
+            while(rs.next()){
+                product=rs.getString(2);
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+        return product;
+    }
+    
+    
+    public void deletefromCart(int productID, int userID, int quantity){
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            if(checkQuantityLeft(quantity)==true){
+                stm.execute("UPDATE cart set quantity=quantity-1 WHERE userid ='"+userID+"' and productid='"+productID+"'"); 
+            }else{
+                stm.execute("DELETE from cart where userid='"+userID+"' and productid='"+productID+"'");
+            }    
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
+    
+    public int getQuantity(int productID, int userID){
+        int quantity=0;
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            rs=stm.executeQuery("SELECT*FROM cart WHERE userid ='"+userID+"' and productid='"+productID+"'");
+            if(rs.next()){
+                quantity=rs.getInt(3);
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+        return quantity;
+    }
+    
+    public boolean checkQuantityLeft(int quantity){
+        if(quantity==1){
+            return false;
+        }else return true;
+    }
 }

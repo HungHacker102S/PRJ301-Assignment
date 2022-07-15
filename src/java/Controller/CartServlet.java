@@ -22,23 +22,33 @@ public class CartServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession ses = request.getSession();
-
-        User u = (User) ses.getAttribute("user");
+        User u = (User) ses.getAttribute("user"); 
         CartDAO cd = new CartDAO();
         ProductDAO pd = new ProductDAO();
 
         List<Cart> carts = cd.getCartsByUserId(u.getUserID());
-
+        String remove = request.getParameter("remove"); 
+        int userid=u.getUserID();
+            int productID=cd.getProductID(userid);
+            int quantity_product=cd.getQuantity(productID, userid);      
+            request.setAttribute("userid", userid);
+            request.setAttribute("productid", productID);
+            
+            
+        if(remove!=null && remove.equals("1")){
+            cd.deletefromCart(productID, userid, quantity_product); 
+            response.sendRedirect("cart");
+        }else{
         double bill = 0;
 
         for (Cart cart : carts) {
             bill += cart.getQuantity() * pd.getProductByProductId("" + cart.getProductId()).getPrice();
         }
-
         request.setAttribute("productList", pd.getAll());
         request.setAttribute("carts", carts);
         request.setAttribute("bill", bill);
         request.getRequestDispatcher("cart.jsp").forward(request, response);
+        }
     }
 
     @Override
@@ -47,10 +57,11 @@ public class CartServlet extends HttpServlet {
         ProductDAO d = new ProductDAO();
         HttpSession ses = request.getSession();
         CartDAO cd = new CartDAO();
-
         User u = (User) ses.getAttribute("user");
-
-        try {
+        
+            
+        
+        try {       
             int productId = Integer.parseInt(request.getParameter("productid"));
             int quantity = Integer.parseInt(request.getParameter("quantity"));
 

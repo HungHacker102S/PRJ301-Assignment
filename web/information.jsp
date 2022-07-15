@@ -22,17 +22,6 @@
         <link rel="stylesheet" href="css/style.css">
         <!--logo-->
         <link rel="icon" href="images/logo.svg">
-        <style>
-            .navbar-light .nav-link {
-                color: black !important;
-            }
-            table,td {
-                border: solid black;
-            }
-            table{
-                border-collapse:collapse;
-            }
-        </style>
 
     </head>
     <body>
@@ -119,43 +108,52 @@
     </nav>
     <!-- Navbar -->
 </header>
+
 <form>
-    <div>
-        <table>
-            <tr>
-                <td>UserID</td>
-                <td>FullName</td>
-                <td>Password</td>
-                <td>Phone</td>
-                <td>Email</td>
-                <td>Role</td>
-                <td>Address</td>
-            </tr>
-            <c:forEach items="${list}" var="list">
+    <div class="container p-3">
+        <table class="table table-bordered">
+            <thead>
                 <tr>
-                    <td>${list.getUserID()}</td>
-                    <td>${list.getFullname()}</td>
-                    <td>${list.getPassword()}</td>
-                    <td>${list.getPhone()}</td>
-                    <td>${list.getEmail()}</td>
-                    <td>${list.getRole()}</td>
-                    <td>${list.getAddress()}</td>
-                    <td>
-                        <a href="edit?userID=${list.getUserID()}">update</a> 
-                        <a href="#" onclick="deletecf(${list.getUserID()})">delete</a>
-                    </td>
+                    <th>UserID</th>
+                    <th>FullName</th>
+                    <th>Password</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Address</th>
+                    <th>Action</th>
                 </tr>
-            </c:forEach>
+            </thead>
+            <tbody>
+                <c:forEach items="${list}" var="user">
+                    <tr>
+                        <td>${user.getUserID()}</td>
+                        <td>${user.getFullname()}</td>
+                        <td>${user.getPassword()}</td>
+                        <td>${user.getPhone()}</td>
+                        <td>${user.getEmail()}</td>
+                        <td>${user.getRole()}</td>
+                        <td>${user.getAddress()}</td>
+                        <td>
+                            <a href="edit?userID=${user.userID}" class="btn btn-primary">
+                                <i class="fa-solid fa-pen"></i>
+                            </a> 
+                            <a href="#" onclick="deletecf(${user.userID})" class="btn btn-danger">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </tbody>
         </table>
     </div>
 </form>
-
-</body>
 <script>
     function deletecf(id) {
         var mess = confirm('are you sure to delete');
-        if(mess === true)
-            window.location.href = 'delete?userID=' +id;
+        if (mess === true)
+            window.location.href = 'delete?userID=' + id;
     }
 </script>
+</body>
 </html>
