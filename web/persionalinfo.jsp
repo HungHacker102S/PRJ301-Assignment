@@ -125,9 +125,9 @@
                             <a href="editinfo?userID=${user.userID}" class="btn btn-primary">
                                 <i class="fa-solid fa-pen"></i>
                             </a> 
-                            <a href="#" onclick="deletecf(${user.userID})" class="btn btn-danger">
+<!--                            <a href="#" onclick="deletecf(${user.userID})" class="btn btn-danger">
                                 <i class="fa-solid fa-trash"></i>
-                            </a>
+                            </a>-->
                         </td>
                     </tr>
                     </tbody>

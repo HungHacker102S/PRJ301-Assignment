@@ -11,7 +11,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 /**
  *
@@ -31,12 +30,15 @@ public class Signin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         UserDAO u = new UserDAO();
         if (!u.checkLogin(email, password)) {
-            //request.getRequestDispatcher("signin.jsp").forward(request, response);
-            response.sendRedirect("signin.jsp");
+            //request.getRequestDispatcher("signin.jsp").forward(request, response);\
+            request.getSession().setAttribute("message", "Invalid email or password");
+            request.setAttribute("email", "");
+            request.getRequestDispatcher("signin.jsp").forward(request, response);
         } else {
             User user = u.userLogin(email, password);
             request.getSession().setAttribute("user", user);

@@ -135,12 +135,18 @@
                         <td>${user.getRole()}</td>
                         <td>${user.getAddress()}</td>
                         <td>
-                            <a href="edit?userID=${user.userID}" class="btn btn-primary">
-                                <i class="fa-solid fa-pen"></i>
-                            </a> 
-                            <a href="#" onclick="deletecf(${user.userID})" class="btn btn-danger">
+                            <c:if test="${user.getRole()==true}">
+                                <a href="edit?userID=${user.userID}" class="btn btn-primary">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+                            </c:if>
+                            <c:if test="${user.getRole()==false}">
+                                <a href="#" onclick="deletecf(${user.userID})" class="btn btn-danger">
                                 <i class="fa-solid fa-trash"></i>
                             </a>
+                            </c:if>
+                            
+
                         </td>
                     </tr>
                 </c:forEach>

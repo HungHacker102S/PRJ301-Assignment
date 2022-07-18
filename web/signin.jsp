@@ -61,7 +61,7 @@
                                      ">
                                     <div class="card-body p-5 shadow-5 text-center">
                                         <h2 class="fw-bold mb-5">Sign in</h2>
-                                        <form method="post" action="signin">
+                                        <form action="signin" method="post">
                                             <!-- Email input -->
                                             <div class="form-outline mb-4">
                                                 <input type="email" name="email" value="${email}" id="form3Example3" class="form-control" required />
@@ -74,9 +74,13 @@
                                                 <label class="form-label" for="form3Example4">Password</label>
                                             </div>
                                             <!-- Submit button -->
-                                            <button type="submit" class="btn btn-primary btn-block mb-4">
+                                            <button type="submit" class="btn btn-primary btn-block mb-4")">
                                                 Sign in
                                             </button>
+                                            <c:if test="${sessionScope.user==null}">
+                                                <p>${message}</p>
+                                                <c:remove var="message" scope="session" /> 
+                                            </c:if>
                                             <!-- Forgot button -->
                                             <a href="forgotpassword.jsp">
                                                 Forgot Password ?
@@ -135,5 +139,4 @@
 
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
-
 </html>
